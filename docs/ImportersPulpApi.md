@@ -37,8 +37,8 @@ func main() {
     pulpImporter := *openapiclient.NewPulpImporter("Name_example") // PulpImporter | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ImportersPulpApi.ImportersCorePulpCreate(context.Background()).PulpImporter(pulpImporter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ImportersPulpApi.ImportersCorePulpCreate(context.Background()).PulpImporter(pulpImporter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportersPulpApi.ImportersCorePulpCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -100,11 +100,11 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this pulp importer.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this pulp importer.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ImportersPulpApi.ImportersCorePulpDelete(context.Background(), pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ImportersPulpApi.ImportersCorePulpDelete(context.Background(), pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportersPulpApi.ImportersCorePulpDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -118,7 +118,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this pulp importer. | 
+**pulpId** | **string** | A UUID string identifying this pulp importer. | 
 
 ### Other Parameters
 
@@ -180,8 +180,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ImportersPulpApi.ImportersCorePulpList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ImportersPulpApi.ImportersCorePulpList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportersPulpApi.ImportersCorePulpList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -252,12 +252,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this pulp importer.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this pulp importer.
     patchedPulpImporter := *openapiclient.NewPatchedPulpImporter() // PatchedPulpImporter | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ImportersPulpApi.ImportersCorePulpPartialUpdate(context.Background(), pulpId).PatchedPulpImporter(patchedPulpImporter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ImportersPulpApi.ImportersCorePulpPartialUpdate(context.Background(), pulpId).PatchedPulpImporter(patchedPulpImporter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportersPulpApi.ImportersCorePulpPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -273,7 +273,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this pulp importer. | 
+**pulpId** | **string** | A UUID string identifying this pulp importer. | 
 
 ### Other Parameters
 
@@ -324,13 +324,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this pulp importer.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this pulp importer.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ImportersPulpApi.ImportersCorePulpRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ImportersPulpApi.ImportersCorePulpRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportersPulpApi.ImportersCorePulpRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -346,7 +346,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this pulp importer. | 
+**pulpId** | **string** | A UUID string identifying this pulp importer. | 
 
 ### Other Parameters
 
@@ -398,12 +398,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this pulp importer.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this pulp importer.
     pulpImporter := *openapiclient.NewPulpImporter("Name_example") // PulpImporter | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ImportersPulpApi.ImportersCorePulpUpdate(context.Background(), pulpId).PulpImporter(pulpImporter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ImportersPulpApi.ImportersCorePulpUpdate(context.Background(), pulpId).PulpImporter(pulpImporter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportersPulpApi.ImportersCorePulpUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -419,7 +419,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this pulp importer. | 
+**pulpId** | **string** | A UUID string identifying this pulp importer. | 
 
 ### Other Parameters
 

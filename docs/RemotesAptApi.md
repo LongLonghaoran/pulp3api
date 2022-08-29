@@ -37,8 +37,8 @@ func main() {
     debAptRemote := *openapiclient.NewDebAptRemote("Name_example", "Url_example", "Distributions_example") // DebAptRemote | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RemotesAptApi.RemotesDebAptCreate(context.Background()).DebAptRemote(debAptRemote).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RemotesAptApi.RemotesDebAptCreate(context.Background()).DebAptRemote(debAptRemote).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RemotesAptApi.RemotesDebAptCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DebAptRemoteResponse**](deb.AptRemoteResponse.md)
+[**DebAptRemoteResponse**](DebAptRemoteResponse.md)
 
 ### Authorization
 
@@ -100,11 +100,11 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this apt remote.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this apt remote.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RemotesAptApi.RemotesDebAptDelete(context.Background(), pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RemotesAptApi.RemotesDebAptDelete(context.Background(), pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RemotesAptApi.RemotesDebAptDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this apt remote. | 
+**pulpId** | **string** | A UUID string identifying this apt remote. | 
 
 ### Other Parameters
 
@@ -190,8 +190,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RemotesAptApi.RemotesDebAptList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).PulpLabelSelect(pulpLabelSelect).PulpLastUpdated(pulpLastUpdated).PulpLastUpdatedGt(pulpLastUpdatedGt).PulpLastUpdatedGte(pulpLastUpdatedGte).PulpLastUpdatedLt(pulpLastUpdatedLt).PulpLastUpdatedLte(pulpLastUpdatedLte).PulpLastUpdatedRange(pulpLastUpdatedRange).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RemotesAptApi.RemotesDebAptList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).PulpLabelSelect(pulpLabelSelect).PulpLastUpdated(pulpLastUpdated).PulpLastUpdatedGt(pulpLastUpdatedGt).PulpLastUpdatedGte(pulpLastUpdatedGte).PulpLastUpdatedLt(pulpLastUpdatedLt).PulpLastUpdatedLte(pulpLastUpdatedLte).PulpLastUpdatedRange(pulpLastUpdatedRange).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RemotesAptApi.RemotesDebAptList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginateddebAptRemoteResponseList**](Paginateddeb.AptRemoteResponseList.md)
+[**PaginateddebAptRemoteResponseList**](PaginateddebAptRemoteResponseList.md)
 
 ### Authorization
 
@@ -269,12 +269,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this apt remote.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this apt remote.
     patcheddebAptRemote := *openapiclient.NewPatcheddebAptRemote() // PatcheddebAptRemote | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RemotesAptApi.RemotesDebAptPartialUpdate(context.Background(), pulpId).PatcheddebAptRemote(patcheddebAptRemote).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RemotesAptApi.RemotesDebAptPartialUpdate(context.Background(), pulpId).PatcheddebAptRemote(patcheddebAptRemote).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RemotesAptApi.RemotesDebAptPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -290,7 +290,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this apt remote. | 
+**pulpId** | **string** | A UUID string identifying this apt remote. | 
 
 ### Other Parameters
 
@@ -341,13 +341,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this apt remote.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this apt remote.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RemotesAptApi.RemotesDebAptRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RemotesAptApi.RemotesDebAptRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RemotesAptApi.RemotesDebAptRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -363,7 +363,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this apt remote. | 
+**pulpId** | **string** | A UUID string identifying this apt remote. | 
 
 ### Other Parameters
 
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DebAptRemoteResponse**](deb.AptRemoteResponse.md)
+[**DebAptRemoteResponse**](DebAptRemoteResponse.md)
 
 ### Authorization
 
@@ -415,12 +415,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this apt remote.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this apt remote.
     debAptRemote := *openapiclient.NewDebAptRemote("Name_example", "Url_example", "Distributions_example") // DebAptRemote | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RemotesAptApi.RemotesDebAptUpdate(context.Background(), pulpId).DebAptRemote(debAptRemote).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RemotesAptApi.RemotesDebAptUpdate(context.Background(), pulpId).DebAptRemote(debAptRemote).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RemotesAptApi.RemotesDebAptUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -436,7 +436,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this apt remote. | 
+**pulpId** | **string** | A UUID string identifying this apt remote. | 
 
 ### Other Parameters
 

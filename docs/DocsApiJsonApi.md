@@ -34,8 +34,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DocsApiJsonApi.DocsApiJsonGet(context.Background()).Lang(lang).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DocsApiJsonApi.DocsApiJsonGet(context.Background()).Lang(lang).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocsApiJsonApi.DocsApiJsonGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

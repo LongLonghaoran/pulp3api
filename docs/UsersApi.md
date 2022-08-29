@@ -37,8 +37,8 @@ func main() {
     user := *openapiclient.NewUser("Username_example") // User | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.UsersApi.UsersCreate(context.Background()).User(user).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UsersApi.UsersCreate(context.Background()).User(user).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -103,8 +103,8 @@ func main() {
     id := int32(56) // int32 | A unique integer value identifying this user.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.UsersApi.UsersDelete(context.Background(), id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UsersApi.UsersDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -197,8 +197,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.UsersApi.UsersList(context.Background()).Email(email).EmailContains(emailContains).EmailIcontains(emailIcontains).EmailIexact(emailIexact).EmailIn(emailIn).FirstName(firstName).FirstNameContains(firstNameContains).FirstNameIcontains(firstNameIcontains).FirstNameIexact(firstNameIexact).FirstNameIn(firstNameIn).IsActive(isActive).IsStaff(isStaff).LastName(lastName).LastNameContains(lastNameContains).LastNameIcontains(lastNameIcontains).LastNameIexact(lastNameIexact).LastNameIn(lastNameIn).Limit(limit).Offset(offset).Ordering(ordering).Username(username).UsernameContains(usernameContains).UsernameIcontains(usernameIcontains).UsernameIexact(usernameIexact).UsernameIn(usernameIn).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UsersApi.UsersList(context.Background()).Email(email).EmailContains(emailContains).EmailIcontains(emailIcontains).EmailIexact(emailIexact).EmailIn(emailIn).FirstName(firstName).FirstNameContains(firstNameContains).FirstNameIcontains(firstNameIcontains).FirstNameIexact(firstNameIexact).FirstNameIn(firstNameIn).IsActive(isActive).IsStaff(isStaff).LastName(lastName).LastNameContains(lastNameContains).LastNameIcontains(lastNameIcontains).LastNameIexact(lastNameIexact).LastNameIn(lastNameIn).Limit(limit).Offset(offset).Ordering(ordering).Username(username).UsernameContains(usernameContains).UsernameIcontains(usernameIcontains).UsernameIexact(usernameIexact).UsernameIn(usernameIn).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -290,8 +290,8 @@ func main() {
     patchedUser := *openapiclient.NewPatchedUser() // PatchedUser | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.UsersApi.UsersPartialUpdate(context.Background(), id).PatchedUser(patchedUser).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UsersApi.UsersPartialUpdate(context.Background(), id).PatchedUser(patchedUser).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -363,8 +363,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.UsersApi.UsersRead(context.Background(), id).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UsersApi.UsersRead(context.Background(), id).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -436,8 +436,8 @@ func main() {
     user := *openapiclient.NewUser("Username_example") // User | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.UsersApi.UsersUpdate(context.Background(), id).User(user).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UsersApi.UsersUpdate(context.Background(), id).User(user).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UsersUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

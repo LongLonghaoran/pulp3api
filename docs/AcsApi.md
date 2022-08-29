@@ -38,8 +38,8 @@ func main() {
     alternateContentSource := *openapiclient.NewAlternateContentSource("Name_example", "Remote_example") // AlternateContentSource | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AcsApi.AcsCreate(context.Background()).AlternateContentSource(alternateContentSource).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AcsApi.AcsCreate(context.Background()).AlternateContentSource(alternateContentSource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AcsApi.AcsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -101,11 +101,11 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this alternate content source.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this alternate content source.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AcsApi.AcsDelete(context.Background(), pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AcsApi.AcsDelete(context.Background(), pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AcsApi.AcsDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -121,7 +121,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this alternate content source. | 
+**pulpId** | **string** | A UUID string identifying this alternate content source. | 
 
 ### Other Parameters
 
@@ -183,8 +183,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AcsApi.AcsList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AcsApi.AcsList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AcsApi.AcsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -255,12 +255,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this alternate content source.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this alternate content source.
     patchedAlternateContentSource := *openapiclient.NewPatchedAlternateContentSource() // PatchedAlternateContentSource | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AcsApi.AcsPartialUpdate(context.Background(), pulpId).PatchedAlternateContentSource(patchedAlternateContentSource).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AcsApi.AcsPartialUpdate(context.Background(), pulpId).PatchedAlternateContentSource(patchedAlternateContentSource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AcsApi.AcsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -276,7 +276,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this alternate content source. | 
+**pulpId** | **string** | A UUID string identifying this alternate content source. | 
 
 ### Other Parameters
 
@@ -327,13 +327,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this alternate content source.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this alternate content source.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AcsApi.AcsRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AcsApi.AcsRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AcsApi.AcsRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -349,7 +349,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this alternate content source. | 
+**pulpId** | **string** | A UUID string identifying this alternate content source. | 
 
 ### Other Parameters
 
@@ -401,12 +401,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this alternate content source.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this alternate content source.
     alternateContentSource := *openapiclient.NewAlternateContentSource("Name_example", "Remote_example") // AlternateContentSource | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AcsApi.AcsRefresh(context.Background(), pulpId).AlternateContentSource(alternateContentSource).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AcsApi.AcsRefresh(context.Background(), pulpId).AlternateContentSource(alternateContentSource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AcsApi.AcsRefresh``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -422,7 +422,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this alternate content source. | 
+**pulpId** | **string** | A UUID string identifying this alternate content source. | 
 
 ### Other Parameters
 
@@ -473,12 +473,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this alternate content source.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this alternate content source.
     alternateContentSource := *openapiclient.NewAlternateContentSource("Name_example", "Remote_example") // AlternateContentSource | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AcsApi.AcsUpdate(context.Background(), pulpId).AlternateContentSource(alternateContentSource).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AcsApi.AcsUpdate(context.Background(), pulpId).AlternateContentSource(alternateContentSource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AcsApi.AcsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -494,7 +494,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this alternate content source. | 
+**pulpId** | **string** | A UUID string identifying this alternate content source. | 
 
 ### Other Parameters
 

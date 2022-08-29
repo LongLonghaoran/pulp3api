@@ -32,8 +32,8 @@ func main() {
     pulpImportCheck := *openapiclient.NewPulpImportCheck() // PulpImportCheck | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ImportersPulpImportCheckApi.PulpImportCheckPost(context.Background()).PulpImportCheck(pulpImportCheck).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ImportersPulpImportCheckApi.PulpImportCheckPost(context.Background()).PulpImportCheck(pulpImportCheck).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportersPulpImportCheckApi.PulpImportCheckPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

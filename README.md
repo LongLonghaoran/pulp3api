@@ -23,7 +23,7 @@ go get golang.org/x/net/context
 Put the package under your project folder and add the following in import:
 
 ```golang
-import sw "./openapi"
+import openapi "github.com/GIT_USER_ID/GIT_REPO_ID"
 ```
 
 To use a proxy, set the environment variable `HTTP_PROXY`:
@@ -41,7 +41,7 @@ Default configuration comes with `Servers` field that contains server objects as
 For using other server than the one defined on index 0 set context value `sw.ContextServerIndex` of type `int`.
 
 ```golang
-ctx := context.WithValue(context.Background(), sw.ContextServerIndex, 1)
+ctx := context.WithValue(context.Background(), openapi.ContextServerIndex, 1)
 ```
 
 ### Templated Server URL
@@ -49,7 +49,7 @@ ctx := context.WithValue(context.Background(), sw.ContextServerIndex, 1)
 Templated server URL is formatted using default variables from configuration or from context value `sw.ContextServerVariables` of type `map[string]string`.
 
 ```golang
-ctx := context.WithValue(context.Background(), sw.ContextServerVariables, map[string]string{
+ctx := context.WithValue(context.Background(), openapi.ContextServerVariables, map[string]string{
 	"basePath": "v2",
 })
 ```
@@ -59,14 +59,14 @@ Note, enum values are always validated and all unused variables are silently ign
 ### URLs Configuration per Operation
 
 Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
-An operation is uniquely identifield by `"{classname}Service.{nickname}"` string.
+An operation is uniquely identified by `"{classname}Service.{nickname}"` string.
 Similar rules for overriding default operation server index and variables applies by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
 
 ```
-ctx := context.WithValue(context.Background(), sw.ContextOperationServerIndices, map[string]int{
+ctx := context.WithValue(context.Background(), openapi.ContextOperationServerIndices, map[string]int{
 	"{classname}Service.{nickname}": 2,
 })
-ctx = context.WithValue(context.Background(), sw.ContextOperationServerVariables, map[string]map[string]string{
+ctx = context.WithValue(context.Background(), openapi.ContextOperationServerVariables, map[string]map[string]string{
 	"{classname}Service.{nickname}": {
 		"port": "8443",
 	},
@@ -98,6 +98,8 @@ Class | Method | HTTP request | Description
 *ContentApi* | [**ContentCreate**](docs/ContentApi.md#contentcreate) | **Post** /pulp/api/v3/content/ | Create a content
 *ContentApi* | [**ContentList**](docs/ContentApi.md#contentlist) | **Get** /pulp/api/v3/content/ | List content
 *ContentApi* | [**ContentRead**](docs/ContentApi.md#contentread) | **Get** /pulp/api/v3/content/{pulp_id}/ | Inspect a content
+*ContentBlobsApi* | [**ContentContainerBlobsList**](docs/ContentBlobsApi.md#contentcontainerblobslist) | **Get** /pulp/api/v3/content/container/blobs/ | List blobs
+*ContentBlobsApi* | [**ContentContainerBlobsRead**](docs/ContentBlobsApi.md#contentcontainerblobsread) | **Get** /pulp/api/v3/content/container/blobs/{pulp_id}/ | Inspect a blob
 *ContentGenericContentsApi* | [**ContentDebGenericContentsCreate**](docs/ContentGenericContentsApi.md#contentdebgenericcontentscreate) | **Post** /pulp/api/v3/content/deb/generic_contents/ | Create a generic content
 *ContentGenericContentsApi* | [**ContentDebGenericContentsList**](docs/ContentGenericContentsApi.md#contentdebgenericcontentslist) | **Get** /pulp/api/v3/content/deb/generic_contents/ | List generic contents
 *ContentGenericContentsApi* | [**ContentDebGenericContentsRead**](docs/ContentGenericContentsApi.md#contentdebgenericcontentsread) | **Get** /pulp/api/v3/content/deb/generic_contents/{pulp_id}/ | Inspect a generic content
@@ -107,6 +109,8 @@ Class | Method | HTTP request | Description
 *ContentInstallerPackagesApi* | [**ContentDebInstallerPackagesCreate**](docs/ContentInstallerPackagesApi.md#contentdebinstallerpackagescreate) | **Post** /pulp/api/v3/content/deb/installer_packages/ | Create an installer package
 *ContentInstallerPackagesApi* | [**ContentDebInstallerPackagesList**](docs/ContentInstallerPackagesApi.md#contentdebinstallerpackageslist) | **Get** /pulp/api/v3/content/deb/installer_packages/ | List installer packages
 *ContentInstallerPackagesApi* | [**ContentDebInstallerPackagesRead**](docs/ContentInstallerPackagesApi.md#contentdebinstallerpackagesread) | **Get** /pulp/api/v3/content/deb/installer_packages/{pulp_id}/ | Inspect an installer package
+*ContentManifestsApi* | [**ContentContainerManifestsList**](docs/ContentManifestsApi.md#contentcontainermanifestslist) | **Get** /pulp/api/v3/content/container/manifests/ | List manifests
+*ContentManifestsApi* | [**ContentContainerManifestsRead**](docs/ContentManifestsApi.md#contentcontainermanifestsread) | **Get** /pulp/api/v3/content/container/manifests/{pulp_id}/ | Inspect a manifest
 *ContentPackageIndicesApi* | [**ContentDebPackageIndicesCreate**](docs/ContentPackageIndicesApi.md#contentdebpackageindicescreate) | **Post** /pulp/api/v3/content/deb/package_indices/ | Create a package index
 *ContentPackageIndicesApi* | [**ContentDebPackageIndicesList**](docs/ContentPackageIndicesApi.md#contentdebpackageindiceslist) | **Get** /pulp/api/v3/content/deb/package_indices/ | List PackageIndices
 *ContentPackageIndicesApi* | [**ContentDebPackageIndicesRead**](docs/ContentPackageIndicesApi.md#contentdebpackageindicesread) | **Get** /pulp/api/v3/content/deb/package_indices/{pulp_id}/ | Inspect a package index
@@ -128,6 +132,10 @@ Class | Method | HTTP request | Description
 *ContentReleasesApi* | [**ContentDebReleasesCreate**](docs/ContentReleasesApi.md#contentdebreleasescreate) | **Post** /pulp/api/v3/content/deb/releases/ | Create a release
 *ContentReleasesApi* | [**ContentDebReleasesList**](docs/ContentReleasesApi.md#contentdebreleaseslist) | **Get** /pulp/api/v3/content/deb/releases/ | List releases
 *ContentReleasesApi* | [**ContentDebReleasesRead**](docs/ContentReleasesApi.md#contentdebreleasesread) | **Get** /pulp/api/v3/content/deb/releases/{pulp_id}/ | Inspect a release
+*ContentSignaturesApi* | [**ContentContainerSignaturesList**](docs/ContentSignaturesApi.md#contentcontainersignatureslist) | **Get** /pulp/api/v3/content/container/signatures/ | List manifest signatures
+*ContentSignaturesApi* | [**ContentContainerSignaturesRead**](docs/ContentSignaturesApi.md#contentcontainersignaturesread) | **Get** /pulp/api/v3/content/container/signatures/{pulp_id}/ | Inspect a manifest signature
+*ContentTagsApi* | [**ContentContainerTagsList**](docs/ContentTagsApi.md#contentcontainertagslist) | **Get** /pulp/api/v3/content/container/tags/ | List tags
+*ContentTagsApi* | [**ContentContainerTagsRead**](docs/ContentTagsApi.md#contentcontainertagsread) | **Get** /pulp/api/v3/content/container/tags/{pulp_id}/ | Inspect a tag
 *ContentguardsApi* | [**ContentguardsCreate**](docs/ContentguardsApi.md#contentguardscreate) | **Post** /pulp/api/v3/contentguards/ | Create a content guard
 *ContentguardsApi* | [**ContentguardsDelete**](docs/ContentguardsApi.md#contentguardsdelete) | **Delete** /pulp/api/v3/contentguards/{pulp_id}/ | Delete a content guard
 *ContentguardsApi* | [**ContentguardsList**](docs/ContentguardsApi.md#contentguardslist) | **Get** /pulp/api/v3/contentguards/ | List content guards
@@ -167,6 +175,16 @@ Class | Method | HTTP request | Description
 *DistributionsAptApi* | [**DistributionsDebAptPartialUpdate**](docs/DistributionsAptApi.md#distributionsdebaptpartialupdate) | **Patch** /pulp/api/v3/distributions/deb/apt/{pulp_id}/ | Update an apt distribution
 *DistributionsAptApi* | [**DistributionsDebAptRead**](docs/DistributionsAptApi.md#distributionsdebaptread) | **Get** /pulp/api/v3/distributions/deb/apt/{pulp_id}/ | Inspect an apt distribution
 *DistributionsAptApi* | [**DistributionsDebAptUpdate**](docs/DistributionsAptApi.md#distributionsdebaptupdate) | **Put** /pulp/api/v3/distributions/deb/apt/{pulp_id}/ | Update an apt distribution
+*DistributionsContainerApi* | [**DistributionsContainerContainerAddRole**](docs/DistributionsContainerApi.md#distributionscontainercontaineraddrole) | **Post** /pulp/api/v3/distributions/container/container/{pulp_id}/add_role/ | 
+*DistributionsContainerApi* | [**DistributionsContainerContainerCreate**](docs/DistributionsContainerApi.md#distributionscontainercontainercreate) | **Post** /pulp/api/v3/distributions/container/container/ | Create a container distribution
+*DistributionsContainerApi* | [**DistributionsContainerContainerDelete**](docs/DistributionsContainerApi.md#distributionscontainercontainerdelete) | **Delete** /pulp/api/v3/distributions/container/container/{pulp_id}/ | Delete a container distribution
+*DistributionsContainerApi* | [**DistributionsContainerContainerList**](docs/DistributionsContainerApi.md#distributionscontainercontainerlist) | **Get** /pulp/api/v3/distributions/container/container/ | List container distributions
+*DistributionsContainerApi* | [**DistributionsContainerContainerListRoles**](docs/DistributionsContainerApi.md#distributionscontainercontainerlistroles) | **Get** /pulp/api/v3/distributions/container/container/{pulp_id}/list_roles/ | 
+*DistributionsContainerApi* | [**DistributionsContainerContainerMyPermissions**](docs/DistributionsContainerApi.md#distributionscontainercontainermypermissions) | **Get** /pulp/api/v3/distributions/container/container/{pulp_id}/my_permissions/ | 
+*DistributionsContainerApi* | [**DistributionsContainerContainerPartialUpdate**](docs/DistributionsContainerApi.md#distributionscontainercontainerpartialupdate) | **Patch** /pulp/api/v3/distributions/container/container/{pulp_id}/ | Update a container distribution
+*DistributionsContainerApi* | [**DistributionsContainerContainerRead**](docs/DistributionsContainerApi.md#distributionscontainercontainerread) | **Get** /pulp/api/v3/distributions/container/container/{pulp_id}/ | Inspect a container distribution
+*DistributionsContainerApi* | [**DistributionsContainerContainerRemoveRole**](docs/DistributionsContainerApi.md#distributionscontainercontainerremoverole) | **Post** /pulp/api/v3/distributions/container/container/{pulp_id}/remove_role/ | 
+*DistributionsContainerApi* | [**DistributionsContainerContainerUpdate**](docs/DistributionsContainerApi.md#distributionscontainercontainerupdate) | **Put** /pulp/api/v3/distributions/container/container/{pulp_id}/ | Update a container distribution
 *DocsApiJsonApi* | [**DocsApiJsonGet**](docs/DocsApiJsonApi.md#docsapijsonget) | **Get** /pulp/api/v3/docs/api.json | 
 *DocsApiYamlApi* | [**DocsApiYamlGet**](docs/DocsApiYamlApi.md#docsapiyamlget) | **Get** /pulp/api/v3/docs/api.yaml | 
 *ExportersApi* | [**ExportersCreate**](docs/ExportersApi.md#exporterscreate) | **Post** /pulp/api/v3/exporters/ | Create an exporter
@@ -250,6 +268,14 @@ Class | Method | HTTP request | Description
 *PublicationsVerbatimApi* | [**PublicationsDebVerbatimDelete**](docs/PublicationsVerbatimApi.md#publicationsdebverbatimdelete) | **Delete** /pulp/api/v3/publications/deb/verbatim/{pulp_id}/ | Delete a verbatim publication
 *PublicationsVerbatimApi* | [**PublicationsDebVerbatimList**](docs/PublicationsVerbatimApi.md#publicationsdebverbatimlist) | **Get** /pulp/api/v3/publications/deb/verbatim/ | List verbatim publications
 *PublicationsVerbatimApi* | [**PublicationsDebVerbatimRead**](docs/PublicationsVerbatimApi.md#publicationsdebverbatimread) | **Get** /pulp/api/v3/publications/deb/verbatim/{pulp_id}/ | Inspect a verbatim publication
+*PulpContainerNamespacesApi* | [**PulpContainerNamespacesAddRole**](docs/PulpContainerNamespacesApi.md#pulpcontainernamespacesaddrole) | **Post** /pulp/api/v3/pulp_container/namespaces/{pulp_id}/add_role/ | 
+*PulpContainerNamespacesApi* | [**PulpContainerNamespacesCreate**](docs/PulpContainerNamespacesApi.md#pulpcontainernamespacescreate) | **Post** /pulp/api/v3/pulp_container/namespaces/ | Create a container namespace
+*PulpContainerNamespacesApi* | [**PulpContainerNamespacesDelete**](docs/PulpContainerNamespacesApi.md#pulpcontainernamespacesdelete) | **Delete** /pulp/api/v3/pulp_container/namespaces/{pulp_id}/ | Delete a container namespace
+*PulpContainerNamespacesApi* | [**PulpContainerNamespacesList**](docs/PulpContainerNamespacesApi.md#pulpcontainernamespaceslist) | **Get** /pulp/api/v3/pulp_container/namespaces/ | List container namespaces
+*PulpContainerNamespacesApi* | [**PulpContainerNamespacesListRoles**](docs/PulpContainerNamespacesApi.md#pulpcontainernamespaceslistroles) | **Get** /pulp/api/v3/pulp_container/namespaces/{pulp_id}/list_roles/ | 
+*PulpContainerNamespacesApi* | [**PulpContainerNamespacesMyPermissions**](docs/PulpContainerNamespacesApi.md#pulpcontainernamespacesmypermissions) | **Get** /pulp/api/v3/pulp_container/namespaces/{pulp_id}/my_permissions/ | 
+*PulpContainerNamespacesApi* | [**PulpContainerNamespacesRead**](docs/PulpContainerNamespacesApi.md#pulpcontainernamespacesread) | **Get** /pulp/api/v3/pulp_container/namespaces/{pulp_id}/ | Inspect a container namespace
+*PulpContainerNamespacesApi* | [**PulpContainerNamespacesRemoveRole**](docs/PulpContainerNamespacesApi.md#pulpcontainernamespacesremoverole) | **Post** /pulp/api/v3/pulp_container/namespaces/{pulp_id}/remove_role/ | 
 *RemotesApi* | [**RemotesCreate**](docs/RemotesApi.md#remotescreate) | **Post** /pulp/api/v3/remotes/ | Create a remote
 *RemotesApi* | [**RemotesDelete**](docs/RemotesApi.md#remotesdelete) | **Delete** /pulp/api/v3/remotes/{pulp_id}/ | Delete a remote
 *RemotesApi* | [**RemotesList**](docs/RemotesApi.md#remoteslist) | **Get** /pulp/api/v3/remotes/ | List remotes
@@ -262,6 +288,16 @@ Class | Method | HTTP request | Description
 *RemotesAptApi* | [**RemotesDebAptPartialUpdate**](docs/RemotesAptApi.md#remotesdebaptpartialupdate) | **Patch** /pulp/api/v3/remotes/deb/apt/{pulp_id}/ | Update an apt remote
 *RemotesAptApi* | [**RemotesDebAptRead**](docs/RemotesAptApi.md#remotesdebaptread) | **Get** /pulp/api/v3/remotes/deb/apt/{pulp_id}/ | Inspect an apt remote
 *RemotesAptApi* | [**RemotesDebAptUpdate**](docs/RemotesAptApi.md#remotesdebaptupdate) | **Put** /pulp/api/v3/remotes/deb/apt/{pulp_id}/ | Update an apt remote
+*RemotesContainerApi* | [**RemotesContainerContainerAddRole**](docs/RemotesContainerApi.md#remotescontainercontaineraddrole) | **Post** /pulp/api/v3/remotes/container/container/{pulp_id}/add_role/ | 
+*RemotesContainerApi* | [**RemotesContainerContainerCreate**](docs/RemotesContainerApi.md#remotescontainercontainercreate) | **Post** /pulp/api/v3/remotes/container/container/ | Create a container remote
+*RemotesContainerApi* | [**RemotesContainerContainerDelete**](docs/RemotesContainerApi.md#remotescontainercontainerdelete) | **Delete** /pulp/api/v3/remotes/container/container/{pulp_id}/ | Delete a container remote
+*RemotesContainerApi* | [**RemotesContainerContainerList**](docs/RemotesContainerApi.md#remotescontainercontainerlist) | **Get** /pulp/api/v3/remotes/container/container/ | List container remotes
+*RemotesContainerApi* | [**RemotesContainerContainerListRoles**](docs/RemotesContainerApi.md#remotescontainercontainerlistroles) | **Get** /pulp/api/v3/remotes/container/container/{pulp_id}/list_roles/ | 
+*RemotesContainerApi* | [**RemotesContainerContainerMyPermissions**](docs/RemotesContainerApi.md#remotescontainercontainermypermissions) | **Get** /pulp/api/v3/remotes/container/container/{pulp_id}/my_permissions/ | 
+*RemotesContainerApi* | [**RemotesContainerContainerPartialUpdate**](docs/RemotesContainerApi.md#remotescontainercontainerpartialupdate) | **Patch** /pulp/api/v3/remotes/container/container/{pulp_id}/ | Update a container remote
+*RemotesContainerApi* | [**RemotesContainerContainerRead**](docs/RemotesContainerApi.md#remotescontainercontainerread) | **Get** /pulp/api/v3/remotes/container/container/{pulp_id}/ | Inspect a container remote
+*RemotesContainerApi* | [**RemotesContainerContainerRemoveRole**](docs/RemotesContainerApi.md#remotescontainercontainerremoverole) | **Post** /pulp/api/v3/remotes/container/container/{pulp_id}/remove_role/ | 
+*RemotesContainerApi* | [**RemotesContainerContainerUpdate**](docs/RemotesContainerApi.md#remotescontainercontainerupdate) | **Put** /pulp/api/v3/remotes/container/container/{pulp_id}/ | Update a container remote
 *RepairApi* | [**RepairPost**](docs/RepairApi.md#repairpost) | **Post** /pulp/api/v3/repair/ | Repair Artifact Storage
 *RepositoriesApi* | [**RepositoriesCreate**](docs/RepositoriesApi.md#repositoriescreate) | **Post** /pulp/api/v3/repositories/ | Create a repository
 *RepositoriesApi* | [**RepositoriesDelete**](docs/RepositoriesApi.md#repositoriesdelete) | **Delete** /pulp/api/v3/repositories/{pulp_id}/ | Delete a repository
@@ -281,6 +317,46 @@ Class | Method | HTTP request | Description
 *RepositoriesAptVersionsApi* | [**RepositoriesDebAptVersionsList**](docs/RepositoriesAptVersionsApi.md#repositoriesdebaptversionslist) | **Get** /pulp/api/v3/repositories/deb/apt/{repository_pk}/versions/ | List repository versions
 *RepositoriesAptVersionsApi* | [**RepositoriesDebAptVersionsRead**](docs/RepositoriesAptVersionsApi.md#repositoriesdebaptversionsread) | **Get** /pulp/api/v3/repositories/deb/apt/{repository_pk}/versions/{number}/ | Inspect a repository version
 *RepositoriesAptVersionsApi* | [**RepositoriesDebAptVersionsRepair**](docs/RepositoriesAptVersionsApi.md#repositoriesdebaptversionsrepair) | **Post** /pulp/api/v3/repositories/deb/apt/{repository_pk}/versions/{number}/repair/ | 
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerAdd**](docs/RepositoriesContainerApi.md#repositoriescontainercontaineradd) | **Post** /pulp/api/v3/repositories/container/container/{pulp_id}/add/ | Add content
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerAddRole**](docs/RepositoriesContainerApi.md#repositoriescontainercontaineraddrole) | **Post** /pulp/api/v3/repositories/container/container/{pulp_id}/add_role/ | 
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerBuildImage**](docs/RepositoriesContainerApi.md#repositoriescontainercontainerbuildimage) | **Post** /pulp/api/v3/repositories/container/container/{pulp_id}/build_image/ | Build an Image
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerCopyManifests**](docs/RepositoriesContainerApi.md#repositoriescontainercontainercopymanifests) | **Post** /pulp/api/v3/repositories/container/container/{pulp_id}/copy_manifests/ | Copy manifests
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerCopyTags**](docs/RepositoriesContainerApi.md#repositoriescontainercontainercopytags) | **Post** /pulp/api/v3/repositories/container/container/{pulp_id}/copy_tags/ | Copy tags
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerCreate**](docs/RepositoriesContainerApi.md#repositoriescontainercontainercreate) | **Post** /pulp/api/v3/repositories/container/container/ | Create a container repository
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerDelete**](docs/RepositoriesContainerApi.md#repositoriescontainercontainerdelete) | **Delete** /pulp/api/v3/repositories/container/container/{pulp_id}/ | Delete a container repository
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerList**](docs/RepositoriesContainerApi.md#repositoriescontainercontainerlist) | **Get** /pulp/api/v3/repositories/container/container/ | List container repositorys
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerListRoles**](docs/RepositoriesContainerApi.md#repositoriescontainercontainerlistroles) | **Get** /pulp/api/v3/repositories/container/container/{pulp_id}/list_roles/ | 
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerMyPermissions**](docs/RepositoriesContainerApi.md#repositoriescontainercontainermypermissions) | **Get** /pulp/api/v3/repositories/container/container/{pulp_id}/my_permissions/ | 
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerPartialUpdate**](docs/RepositoriesContainerApi.md#repositoriescontainercontainerpartialupdate) | **Patch** /pulp/api/v3/repositories/container/container/{pulp_id}/ | Update a container repository
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerRead**](docs/RepositoriesContainerApi.md#repositoriescontainercontainerread) | **Get** /pulp/api/v3/repositories/container/container/{pulp_id}/ | Inspect a container repository
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerRemove**](docs/RepositoriesContainerApi.md#repositoriescontainercontainerremove) | **Post** /pulp/api/v3/repositories/container/container/{pulp_id}/remove/ | Remove content
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerRemoveRole**](docs/RepositoriesContainerApi.md#repositoriescontainercontainerremoverole) | **Post** /pulp/api/v3/repositories/container/container/{pulp_id}/remove_role/ | 
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerSign**](docs/RepositoriesContainerApi.md#repositoriescontainercontainersign) | **Post** /pulp/api/v3/repositories/container/container/{pulp_id}/sign/ | Sign images in the repo
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerSync**](docs/RepositoriesContainerApi.md#repositoriescontainercontainersync) | **Post** /pulp/api/v3/repositories/container/container/{pulp_id}/sync/ | Sync from a remote
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerTag**](docs/RepositoriesContainerApi.md#repositoriescontainercontainertag) | **Post** /pulp/api/v3/repositories/container/container/{pulp_id}/tag/ | Create a Tag
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerUntag**](docs/RepositoriesContainerApi.md#repositoriescontainercontaineruntag) | **Post** /pulp/api/v3/repositories/container/container/{pulp_id}/untag/ | Delete a tag
+*RepositoriesContainerApi* | [**RepositoriesContainerContainerUpdate**](docs/RepositoriesContainerApi.md#repositoriescontainercontainerupdate) | **Put** /pulp/api/v3/repositories/container/container/{pulp_id}/ | Update a container repository
+*RepositoriesContainerPushApi* | [**RepositoriesContainerContainerPushAddRole**](docs/RepositoriesContainerPushApi.md#repositoriescontainercontainerpushaddrole) | **Post** /pulp/api/v3/repositories/container/container-push/{pulp_id}/add_role/ | 
+*RepositoriesContainerPushApi* | [**RepositoriesContainerContainerPushList**](docs/RepositoriesContainerPushApi.md#repositoriescontainercontainerpushlist) | **Get** /pulp/api/v3/repositories/container/container-push/ | List container push repositorys
+*RepositoriesContainerPushApi* | [**RepositoriesContainerContainerPushListRoles**](docs/RepositoriesContainerPushApi.md#repositoriescontainercontainerpushlistroles) | **Get** /pulp/api/v3/repositories/container/container-push/{pulp_id}/list_roles/ | 
+*RepositoriesContainerPushApi* | [**RepositoriesContainerContainerPushMyPermissions**](docs/RepositoriesContainerPushApi.md#repositoriescontainercontainerpushmypermissions) | **Get** /pulp/api/v3/repositories/container/container-push/{pulp_id}/my_permissions/ | 
+*RepositoriesContainerPushApi* | [**RepositoriesContainerContainerPushPartialUpdate**](docs/RepositoriesContainerPushApi.md#repositoriescontainercontainerpushpartialupdate) | **Patch** /pulp/api/v3/repositories/container/container-push/{pulp_id}/ | Update a container push repository
+*RepositoriesContainerPushApi* | [**RepositoriesContainerContainerPushRead**](docs/RepositoriesContainerPushApi.md#repositoriescontainercontainerpushread) | **Get** /pulp/api/v3/repositories/container/container-push/{pulp_id}/ | Inspect a container push repository
+*RepositoriesContainerPushApi* | [**RepositoriesContainerContainerPushRemoveImage**](docs/RepositoriesContainerPushApi.md#repositoriescontainercontainerpushremoveimage) | **Post** /pulp/api/v3/repositories/container/container-push/{pulp_id}/remove_image/ | Delete an image from a repository
+*RepositoriesContainerPushApi* | [**RepositoriesContainerContainerPushRemoveRole**](docs/RepositoriesContainerPushApi.md#repositoriescontainercontainerpushremoverole) | **Post** /pulp/api/v3/repositories/container/container-push/{pulp_id}/remove_role/ | 
+*RepositoriesContainerPushApi* | [**RepositoriesContainerContainerPushRemoveSignatures**](docs/RepositoriesContainerPushApi.md#repositoriescontainercontainerpushremovesignatures) | **Post** /pulp/api/v3/repositories/container/container-push/{pulp_id}/remove_signatures/ | 
+*RepositoriesContainerPushApi* | [**RepositoriesContainerContainerPushSign**](docs/RepositoriesContainerPushApi.md#repositoriescontainercontainerpushsign) | **Post** /pulp/api/v3/repositories/container/container-push/{pulp_id}/sign/ | Sign images in the repo
+*RepositoriesContainerPushApi* | [**RepositoriesContainerContainerPushTag**](docs/RepositoriesContainerPushApi.md#repositoriescontainercontainerpushtag) | **Post** /pulp/api/v3/repositories/container/container-push/{pulp_id}/tag/ | Create a Tag
+*RepositoriesContainerPushApi* | [**RepositoriesContainerContainerPushUntag**](docs/RepositoriesContainerPushApi.md#repositoriescontainercontainerpushuntag) | **Post** /pulp/api/v3/repositories/container/container-push/{pulp_id}/untag/ | Delete a tag
+*RepositoriesContainerPushApi* | [**RepositoriesContainerContainerPushUpdate**](docs/RepositoriesContainerPushApi.md#repositoriescontainercontainerpushupdate) | **Put** /pulp/api/v3/repositories/container/container-push/{pulp_id}/ | Update a container push repository
+*RepositoriesContainerPushVersionsApi* | [**RepositoriesContainerContainerPushVersionsDelete**](docs/RepositoriesContainerPushVersionsApi.md#repositoriescontainercontainerpushversionsdelete) | **Delete** /pulp/api/v3/repositories/container/container-push/{repository_pk}/versions/{number}/ | Delete a repository version
+*RepositoriesContainerPushVersionsApi* | [**RepositoriesContainerContainerPushVersionsList**](docs/RepositoriesContainerPushVersionsApi.md#repositoriescontainercontainerpushversionslist) | **Get** /pulp/api/v3/repositories/container/container-push/{repository_pk}/versions/ | List repository versions
+*RepositoriesContainerPushVersionsApi* | [**RepositoriesContainerContainerPushVersionsRead**](docs/RepositoriesContainerPushVersionsApi.md#repositoriescontainercontainerpushversionsread) | **Get** /pulp/api/v3/repositories/container/container-push/{repository_pk}/versions/{number}/ | Inspect a repository version
+*RepositoriesContainerPushVersionsApi* | [**RepositoriesContainerContainerPushVersionsRepair**](docs/RepositoriesContainerPushVersionsApi.md#repositoriescontainercontainerpushversionsrepair) | **Post** /pulp/api/v3/repositories/container/container-push/{repository_pk}/versions/{number}/repair/ | 
+*RepositoriesContainerVersionsApi* | [**RepositoriesContainerContainerVersionsDelete**](docs/RepositoriesContainerVersionsApi.md#repositoriescontainercontainerversionsdelete) | **Delete** /pulp/api/v3/repositories/container/container/{repository_pk}/versions/{number}/ | Delete a repository version
+*RepositoriesContainerVersionsApi* | [**RepositoriesContainerContainerVersionsList**](docs/RepositoriesContainerVersionsApi.md#repositoriescontainercontainerversionslist) | **Get** /pulp/api/v3/repositories/container/container/{repository_pk}/versions/ | List repository versions
+*RepositoriesContainerVersionsApi* | [**RepositoriesContainerContainerVersionsRead**](docs/RepositoriesContainerVersionsApi.md#repositoriescontainercontainerversionsread) | **Get** /pulp/api/v3/repositories/container/container/{repository_pk}/versions/{number}/ | Inspect a repository version
+*RepositoriesContainerVersionsApi* | [**RepositoriesContainerContainerVersionsRepair**](docs/RepositoriesContainerVersionsApi.md#repositoriescontainercontainerversionsrepair) | **Post** /pulp/api/v3/repositories/container/container/{repository_pk}/versions/{number}/repair/ | 
 *RepositoriesReclaimSpaceApi* | [**RepositoriesReclaimSpaceReclaim**](docs/RepositoriesReclaimSpaceApi.md#repositoriesreclaimspacereclaim) | **Post** /pulp/api/v3/repositories/reclaim_space/ | 
 *RepositoriesVersionsApi* | [**RepositoriesVersionsDelete**](docs/RepositoriesVersionsApi.md#repositoriesversionsdelete) | **Delete** /pulp/api/v3/repositories/{repository_pk}/versions/{number}/ | Delete a repository version
 *RepositoriesVersionsApi* | [**RepositoriesVersionsList**](docs/RepositoriesVersionsApi.md#repositoriesversionslist) | **Get** /pulp/api/v3/repositories/{repository_pk}/versions/ | List repository versions
@@ -313,6 +389,7 @@ Class | Method | HTTP request | Description
 *TasksApi* | [**TasksPurge**](docs/TasksApi.md#taskspurge) | **Post** /pulp/api/v3/tasks/purge/ | Purge Completed Tasks
 *TasksApi* | [**TasksRead**](docs/TasksApi.md#tasksread) | **Get** /pulp/api/v3/tasks/{pulp_id}/ | Inspect a task
 *TasksApi* | [**TasksRemoveRole**](docs/TasksApi.md#tasksremoverole) | **Post** /pulp/api/v3/tasks/{pulp_id}/remove_role/ | 
+*TokenApi* | [**TokenGet**](docs/TokenApi.md#tokenget) | **Get** /token/ | 
 *UploadsApi* | [**UploadsCommit**](docs/UploadsApi.md#uploadscommit) | **Post** /pulp/api/v3/uploads/{pulp_id}/commit/ | Finish an Upload
 *UploadsApi* | [**UploadsCreate**](docs/UploadsApi.md#uploadscreate) | **Post** /pulp/api/v3/uploads/ | Create an upload
 *UploadsApi* | [**UploadsDelete**](docs/UploadsApi.md#uploadsdelete) | **Delete** /pulp/api/v3/uploads/{pulp_id}/ | Delete an upload
@@ -341,6 +418,21 @@ Class | Method | HTTP request | Description
  - [AlternateContentSourceResponse](docs/AlternateContentSourceResponse.md)
  - [ArtifactResponse](docs/ArtifactResponse.md)
  - [AsyncOperationResponse](docs/AsyncOperationResponse.md)
+ - [ContainerBlobResponse](docs/ContainerBlobResponse.md)
+ - [ContainerContainerDistribution](docs/ContainerContainerDistribution.md)
+ - [ContainerContainerDistributionResponse](docs/ContainerContainerDistributionResponse.md)
+ - [ContainerContainerNamespace](docs/ContainerContainerNamespace.md)
+ - [ContainerContainerNamespaceResponse](docs/ContainerContainerNamespaceResponse.md)
+ - [ContainerContainerPushRepository](docs/ContainerContainerPushRepository.md)
+ - [ContainerContainerPushRepositoryResponse](docs/ContainerContainerPushRepositoryResponse.md)
+ - [ContainerContainerRemote](docs/ContainerContainerRemote.md)
+ - [ContainerContainerRemoteResponse](docs/ContainerContainerRemoteResponse.md)
+ - [ContainerContainerRepository](docs/ContainerContainerRepository.md)
+ - [ContainerContainerRepositoryResponse](docs/ContainerContainerRepositoryResponse.md)
+ - [ContainerManifestResponse](docs/ContainerManifestResponse.md)
+ - [ContainerManifestSignatureResponse](docs/ContainerManifestSignatureResponse.md)
+ - [ContainerRepositorySyncURL](docs/ContainerRepositorySyncURL.md)
+ - [ContainerTagResponse](docs/ContainerTagResponse.md)
  - [ContentAppStatusResponse](docs/ContentAppStatusResponse.md)
  - [ContentGuard](docs/ContentGuard.md)
  - [ContentGuardResponse](docs/ContentGuardResponse.md)
@@ -397,6 +489,8 @@ Class | Method | HTTP request | Description
  - [ImportResponse](docs/ImportResponse.md)
  - [Importer](docs/Importer.md)
  - [ImporterResponse](docs/ImporterResponse.md)
+ - [ManifestCopy](docs/ManifestCopy.md)
+ - [MediaTypesEnum](docs/MediaTypesEnum.md)
  - [MethodEnum](docs/MethodEnum.md)
  - [MinimalTaskResponse](docs/MinimalTaskResponse.md)
  - [MultipleArtifactContent](docs/MultipleArtifactContent.md)
@@ -439,6 +533,15 @@ Class | Method | HTTP request | Description
  - [PaginatedUserResponseList](docs/PaginatedUserResponseList.md)
  - [PaginatedUserRoleResponseList](docs/PaginatedUserRoleResponseList.md)
  - [PaginatedWorkerResponseList](docs/PaginatedWorkerResponseList.md)
+ - [PaginatedcontainerBlobResponseList](docs/PaginatedcontainerBlobResponseList.md)
+ - [PaginatedcontainerContainerDistributionResponseList](docs/PaginatedcontainerContainerDistributionResponseList.md)
+ - [PaginatedcontainerContainerNamespaceResponseList](docs/PaginatedcontainerContainerNamespaceResponseList.md)
+ - [PaginatedcontainerContainerPushRepositoryResponseList](docs/PaginatedcontainerContainerPushRepositoryResponseList.md)
+ - [PaginatedcontainerContainerRemoteResponseList](docs/PaginatedcontainerContainerRemoteResponseList.md)
+ - [PaginatedcontainerContainerRepositoryResponseList](docs/PaginatedcontainerContainerRepositoryResponseList.md)
+ - [PaginatedcontainerManifestResponseList](docs/PaginatedcontainerManifestResponseList.md)
+ - [PaginatedcontainerManifestSignatureResponseList](docs/PaginatedcontainerManifestSignatureResponseList.md)
+ - [PaginatedcontainerTagResponseList](docs/PaginatedcontainerTagResponseList.md)
  - [PaginateddebAptDistributionResponseList](docs/PaginateddebAptDistributionResponseList.md)
  - [PaginateddebAptPublicationResponseList](docs/PaginateddebAptPublicationResponseList.md)
  - [PaginateddebAptRemoteResponseList](docs/PaginateddebAptRemoteResponseList.md)
@@ -470,6 +573,10 @@ Class | Method | HTTP request | Description
  - [PatchedRole](docs/PatchedRole.md)
  - [PatchedTaskCancel](docs/PatchedTaskCancel.md)
  - [PatchedUser](docs/PatchedUser.md)
+ - [PatchedcontainerContainerDistribution](docs/PatchedcontainerContainerDistribution.md)
+ - [PatchedcontainerContainerPushRepository](docs/PatchedcontainerContainerPushRepository.md)
+ - [PatchedcontainerContainerRemote](docs/PatchedcontainerContainerRemote.md)
+ - [PatchedcontainerContainerRepository](docs/PatchedcontainerContainerRepository.md)
  - [PatcheddebAptDistribution](docs/PatcheddebAptDistribution.md)
  - [PatcheddebAptRemote](docs/PatcheddebAptRemote.md)
  - [PatcheddebAptRepository](docs/PatcheddebAptRepository.md)
@@ -484,31 +591,46 @@ Class | Method | HTTP request | Description
  - [PulpImport](docs/PulpImport.md)
  - [PulpImportCheck](docs/PulpImportCheck.md)
  - [PulpImportCheckResponse](docs/PulpImportCheckResponse.md)
+ - [PulpImportCheckResponsePath](docs/PulpImportCheckResponsePath.md)
+ - [PulpImportCheckResponseRepoMapping](docs/PulpImportCheckResponseRepoMapping.md)
+ - [PulpImportCheckResponseToc](docs/PulpImportCheckResponseToc.md)
  - [PulpImporter](docs/PulpImporter.md)
  - [PulpImporterResponse](docs/PulpImporterResponse.md)
  - [Purge](docs/Purge.md)
  - [RBACContentGuard](docs/RBACContentGuard.md)
  - [RBACContentGuardResponse](docs/RBACContentGuardResponse.md)
  - [ReclaimSpace](docs/ReclaimSpace.md)
+ - [RecursiveManage](docs/RecursiveManage.md)
  - [RedisConnectionResponse](docs/RedisConnectionResponse.md)
  - [Remote](docs/Remote.md)
  - [RemoteResponse](docs/RemoteResponse.md)
+ - [RemoveImage](docs/RemoveImage.md)
+ - [RemoveSignatures](docs/RemoveSignatures.md)
+ - [RemoveSignaturesResponse](docs/RemoveSignaturesResponse.md)
  - [Repair](docs/Repair.md)
  - [Repository](docs/Repository.md)
  - [RepositoryAddRemoveContent](docs/RepositoryAddRemoveContent.md)
  - [RepositoryResponse](docs/RepositoryResponse.md)
+ - [RepositorySign](docs/RepositorySign.md)
  - [RepositorySyncURL](docs/RepositorySyncURL.md)
  - [RepositoryVersionResponse](docs/RepositoryVersionResponse.md)
+ - [RepositoryVersionResponseContentSummary](docs/RepositoryVersionResponseContentSummary.md)
  - [Role](docs/Role.md)
  - [RoleResponse](docs/RoleResponse.md)
  - [SigningServiceResponse](docs/SigningServiceResponse.md)
  - [StatesEnum](docs/StatesEnum.md)
  - [StatusResponse](docs/StatusResponse.md)
+ - [StatusResponseDatabaseConnection](docs/StatusResponseDatabaseConnection.md)
+ - [StatusResponseRedisConnection](docs/StatusResponseRedisConnection.md)
+ - [StatusResponseStorage](docs/StatusResponseStorage.md)
  - [StorageResponse](docs/StorageResponse.md)
+ - [TagCopy](docs/TagCopy.md)
+ - [TagImage](docs/TagImage.md)
  - [TaskGroupOperationResponse](docs/TaskGroupOperationResponse.md)
  - [TaskGroupResponse](docs/TaskGroupResponse.md)
  - [TaskResponse](docs/TaskResponse.md)
  - [TaskScheduleResponse](docs/TaskScheduleResponse.md)
+ - [UnTagImage](docs/UnTagImage.md)
  - [Upload](docs/Upload.md)
  - [UploadChunkResponse](docs/UploadChunkResponse.md)
  - [UploadCommit](docs/UploadCommit.md)

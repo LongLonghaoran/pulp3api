@@ -7,15 +7,15 @@ Name | Type | Description | Notes
 **Versions** | [**[]VersionResponse**](VersionResponse.md) | Version information of Pulp components | 
 **OnlineWorkers** | [**[]WorkerResponse**](WorkerResponse.md) | List of online workers known to the application. An online worker is actively heartbeating and can respond to new work | 
 **OnlineContentApps** | [**[]ContentAppStatusResponse**](ContentAppStatusResponse.md) | List of online content apps known to the application. An online content app is actively heartbeating and can serve data to clients | 
-**DatabaseConnection** | [**DatabaseConnectionResponse**](DatabaseConnectionResponse.md) | Database connection information | 
-**RedisConnection** | Pointer to [**RedisConnectionResponse**](RedisConnectionResponse.md) | Redis connection information | [optional] 
-**Storage** | Pointer to [**StorageResponse**](StorageResponse.md) | Storage information | [optional] 
+**DatabaseConnection** | [**StatusResponseDatabaseConnection**](StatusResponseDatabaseConnection.md) |  | 
+**RedisConnection** | Pointer to [**StatusResponseRedisConnection**](StatusResponseRedisConnection.md) |  | [optional] 
+**Storage** | Pointer to [**StatusResponseStorage**](StatusResponseStorage.md) |  | [optional] 
 
 ## Methods
 
 ### NewStatusResponse
 
-`func NewStatusResponse(versions []VersionResponse, onlineWorkers []WorkerResponse, onlineContentApps []ContentAppStatusResponse, databaseConnection DatabaseConnectionResponse, ) *StatusResponse`
+`func NewStatusResponse(versions []VersionResponse, onlineWorkers []WorkerResponse, onlineContentApps []ContentAppStatusResponse, databaseConnection StatusResponseDatabaseConnection, ) *StatusResponse`
 
 NewStatusResponse instantiates a new StatusResponse object
 This constructor will assign default values to properties that have it defined,
@@ -92,40 +92,40 @@ SetOnlineContentApps sets OnlineContentApps field to given value.
 
 ### GetDatabaseConnection
 
-`func (o *StatusResponse) GetDatabaseConnection() DatabaseConnectionResponse`
+`func (o *StatusResponse) GetDatabaseConnection() StatusResponseDatabaseConnection`
 
 GetDatabaseConnection returns the DatabaseConnection field if non-nil, zero value otherwise.
 
 ### GetDatabaseConnectionOk
 
-`func (o *StatusResponse) GetDatabaseConnectionOk() (*DatabaseConnectionResponse, bool)`
+`func (o *StatusResponse) GetDatabaseConnectionOk() (*StatusResponseDatabaseConnection, bool)`
 
 GetDatabaseConnectionOk returns a tuple with the DatabaseConnection field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatabaseConnection
 
-`func (o *StatusResponse) SetDatabaseConnection(v DatabaseConnectionResponse)`
+`func (o *StatusResponse) SetDatabaseConnection(v StatusResponseDatabaseConnection)`
 
 SetDatabaseConnection sets DatabaseConnection field to given value.
 
 
 ### GetRedisConnection
 
-`func (o *StatusResponse) GetRedisConnection() RedisConnectionResponse`
+`func (o *StatusResponse) GetRedisConnection() StatusResponseRedisConnection`
 
 GetRedisConnection returns the RedisConnection field if non-nil, zero value otherwise.
 
 ### GetRedisConnectionOk
 
-`func (o *StatusResponse) GetRedisConnectionOk() (*RedisConnectionResponse, bool)`
+`func (o *StatusResponse) GetRedisConnectionOk() (*StatusResponseRedisConnection, bool)`
 
 GetRedisConnectionOk returns a tuple with the RedisConnection field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRedisConnection
 
-`func (o *StatusResponse) SetRedisConnection(v RedisConnectionResponse)`
+`func (o *StatusResponse) SetRedisConnection(v StatusResponseRedisConnection)`
 
 SetRedisConnection sets RedisConnection field to given value.
 
@@ -137,20 +137,20 @@ HasRedisConnection returns a boolean if a field has been set.
 
 ### GetStorage
 
-`func (o *StatusResponse) GetStorage() StorageResponse`
+`func (o *StatusResponse) GetStorage() StatusResponseStorage`
 
 GetStorage returns the Storage field if non-nil, zero value otherwise.
 
 ### GetStorageOk
 
-`func (o *StatusResponse) GetStorageOk() (*StorageResponse, bool)`
+`func (o *StatusResponse) GetStorageOk() (*StatusResponseStorage, bool)`
 
 GetStorageOk returns a tuple with the Storage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorage
 
-`func (o *StatusResponse) SetStorage(v StorageResponse)`
+`func (o *StatusResponse) SetStorage(v StatusResponseStorage)`
 
 SetStorage sets Storage field to given value.
 

@@ -37,12 +37,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this task.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this task.
     nestedRole := *openapiclient.NewNestedRole("Role_example") // NestedRole | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TasksApi.TasksAddRole(context.Background(), pulpId).NestedRole(nestedRole).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TasksApi.TasksAddRole(context.Background(), pulpId).NestedRole(nestedRole).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TasksApi.TasksAddRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -58,7 +58,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this task. | 
+**pulpId** | **string** | A UUID string identifying this task. | 
 
 ### Other Parameters
 
@@ -109,12 +109,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this task.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this task.
     patchedTaskCancel := *openapiclient.NewPatchedTaskCancel() // PatchedTaskCancel | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TasksApi.TasksCancel(context.Background(), pulpId).PatchedTaskCancel(patchedTaskCancel).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TasksApi.TasksCancel(context.Background(), pulpId).PatchedTaskCancel(patchedTaskCancel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TasksApi.TasksCancel``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -130,7 +130,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this task. | 
+**pulpId** | **string** | A UUID string identifying this task. | 
 
 ### Other Parameters
 
@@ -181,11 +181,11 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this task.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this task.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TasksApi.TasksDelete(context.Background(), pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TasksApi.TasksDelete(context.Background(), pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TasksApi.TasksDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -199,7 +199,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this task. | 
+**pulpId** | **string** | A UUID string identifying this task. | 
 
 ### Other Parameters
 
@@ -250,8 +250,8 @@ import (
 )
 
 func main() {
-    childTasks := TODO // string | Foreign Key referenced by HREF (optional)
-    createdResources := TODO // string |  (optional)
+    childTasks := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Foreign Key referenced by HREF (optional)
+    createdResources := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
     finishedAt := time.Now() // time.Time | ISO 8601 formatted dates are supported (optional)
     finishedAtGt := time.Now() // time.Time | Filter results where finished_at is greater than value (optional)
     finishedAtGte := time.Now() // time.Time | Filter results where finished_at is greater than or equal to value (optional)
@@ -265,7 +265,7 @@ func main() {
     nameContains := "nameContains_example" // string | Filter results where name contains value (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := []string{"Ordering_example"} // []string | Ordering (optional)
-    parentTask := TODO // string | Foreign Key referenced by HREF (optional)
+    parentTask := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Foreign Key referenced by HREF (optional)
     reservedResourcesRecord := []string{"Inner_example"} // []string |  (optional)
     startedAt := time.Now() // time.Time | ISO 8601 formatted dates are supported (optional)
     startedAtGt := time.Now() // time.Time | Filter results where started_at is greater than value (optional)
@@ -275,15 +275,15 @@ func main() {
     startedAtRange := []time.Time{time.Now()} // []time.Time | Filter results where started_at is between two comma separated values (optional)
     state := "state_example" // string |  (optional)
     stateIn := []string{"Inner_example"} // []string | Filter results where state is in a comma-separated list of values (optional)
-    taskGroup := TODO // string | Foreign Key referenced by HREF (optional)
-    worker := TODO // string | Foreign Key referenced by HREF (optional)
+    taskGroup := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Foreign Key referenced by HREF (optional)
+    worker := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Foreign Key referenced by HREF (optional)
     workerIn := []string{"Inner_example"} // []string | Filter results where worker is in a comma-separated list of values (optional)
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TasksApi.TasksList(context.Background()).ChildTasks(childTasks).CreatedResources(createdResources).FinishedAt(finishedAt).FinishedAtGt(finishedAtGt).FinishedAtGte(finishedAtGte).FinishedAtLt(finishedAtLt).FinishedAtLte(finishedAtLte).FinishedAtRange(finishedAtRange).Limit(limit).LoggingCid(loggingCid).LoggingCidContains(loggingCidContains).Name(name).NameContains(nameContains).Offset(offset).Ordering(ordering).ParentTask(parentTask).ReservedResourcesRecord(reservedResourcesRecord).StartedAt(startedAt).StartedAtGt(startedAtGt).StartedAtGte(startedAtGte).StartedAtLt(startedAtLt).StartedAtLte(startedAtLte).StartedAtRange(startedAtRange).State(state).StateIn(stateIn).TaskGroup(taskGroup).Worker(worker).WorkerIn(workerIn).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TasksApi.TasksList(context.Background()).ChildTasks(childTasks).CreatedResources(createdResources).FinishedAt(finishedAt).FinishedAtGt(finishedAtGt).FinishedAtGte(finishedAtGte).FinishedAtLt(finishedAtLt).FinishedAtLte(finishedAtLte).FinishedAtRange(finishedAtRange).Limit(limit).LoggingCid(loggingCid).LoggingCidContains(loggingCidContains).Name(name).NameContains(nameContains).Offset(offset).Ordering(ordering).ParentTask(parentTask).ReservedResourcesRecord(reservedResourcesRecord).StartedAt(startedAt).StartedAtGt(startedAtGt).StartedAtGte(startedAtGte).StartedAtLt(startedAtLt).StartedAtLte(startedAtLte).StartedAtRange(startedAtRange).State(state).StateIn(stateIn).TaskGroup(taskGroup).Worker(worker).WorkerIn(workerIn).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TasksApi.TasksList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -304,8 +304,8 @@ Other parameters are passed through a pointer to a apiTasksListRequest struct vi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **childTasks** | [**string**](string.md) | Foreign Key referenced by HREF | 
- **createdResources** | [**string**](string.md) |  | 
+ **childTasks** | **string** | Foreign Key referenced by HREF | 
+ **createdResources** | **string** |  | 
  **finishedAt** | **time.Time** | ISO 8601 formatted dates are supported | 
  **finishedAtGt** | **time.Time** | Filter results where finished_at is greater than value | 
  **finishedAtGte** | **time.Time** | Filter results where finished_at is greater than or equal to value | 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
  **nameContains** | **string** | Filter results where name contains value | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **[]string** | Ordering | 
- **parentTask** | [**string**](string.md) | Foreign Key referenced by HREF | 
+ **parentTask** | **string** | Foreign Key referenced by HREF | 
  **reservedResourcesRecord** | **[]string** |  | 
  **startedAt** | **time.Time** | ISO 8601 formatted dates are supported | 
  **startedAtGt** | **time.Time** | Filter results where started_at is greater than value | 
@@ -329,8 +329,8 @@ Name | Type | Description  | Notes
  **startedAtRange** | [**[]time.Time**](time.Time.md) | Filter results where started_at is between two comma separated values | 
  **state** | **string** |  | 
  **stateIn** | **[]string** | Filter results where state is in a comma-separated list of values | 
- **taskGroup** | [**string**](string.md) | Foreign Key referenced by HREF | 
- **worker** | [**string**](string.md) | Foreign Key referenced by HREF | 
+ **taskGroup** | **string** | Foreign Key referenced by HREF | 
+ **worker** | **string** | Foreign Key referenced by HREF | 
  **workerIn** | **[]string** | Filter results where worker is in a comma-separated list of values | 
  **fields** | **string** | A list of fields to include in the response. | 
  **excludeFields** | **string** | A list of fields to exclude from the response. | 
@@ -374,13 +374,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this task.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this task.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TasksApi.TasksListRoles(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TasksApi.TasksListRoles(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TasksApi.TasksListRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -396,7 +396,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this task. | 
+**pulpId** | **string** | A UUID string identifying this task. | 
 
 ### Other Parameters
 
@@ -448,13 +448,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this task.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this task.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TasksApi.TasksMyPermissions(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TasksApi.TasksMyPermissions(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TasksApi.TasksMyPermissions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -470,7 +470,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this task. | 
+**pulpId** | **string** | A UUID string identifying this task. | 
 
 ### Other Parameters
 
@@ -525,8 +525,8 @@ func main() {
     purge := *openapiclient.NewPurge() // Purge | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TasksApi.TasksPurge(context.Background()).Purge(purge).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TasksApi.TasksPurge(context.Background()).Purge(purge).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TasksApi.TasksPurge``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -588,13 +588,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this task.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this task.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TasksApi.TasksRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TasksApi.TasksRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TasksApi.TasksRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -610,7 +610,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this task. | 
+**pulpId** | **string** | A UUID string identifying this task. | 
 
 ### Other Parameters
 
@@ -662,12 +662,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this task.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this task.
     nestedRole := *openapiclient.NewNestedRole("Role_example") // NestedRole | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TasksApi.TasksRemoveRole(context.Background(), pulpId).NestedRole(nestedRole).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TasksApi.TasksRemoveRole(context.Background(), pulpId).NestedRole(nestedRole).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TasksApi.TasksRemoveRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -683,7 +683,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this task. | 
+**pulpId** | **string** | A UUID string identifying this task. | 
 
 ### Other Parameters
 

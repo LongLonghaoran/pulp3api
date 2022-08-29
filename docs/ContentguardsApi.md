@@ -37,8 +37,8 @@ func main() {
     contentGuard := *openapiclient.NewContentGuard("Name_example") // ContentGuard | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsApi.ContentguardsCreate(context.Background()).ContentGuard(contentGuard).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsApi.ContentguardsCreate(context.Background()).ContentGuard(contentGuard).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsApi.ContentguardsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -100,11 +100,11 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this content guard.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsApi.ContentguardsDelete(context.Background(), pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsApi.ContentguardsDelete(context.Background(), pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsApi.ContentguardsDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -118,7 +118,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this content guard. | 
+**pulpId** | **string** | A UUID string identifying this content guard. | 
 
 ### Other Parameters
 
@@ -180,8 +180,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsApi.ContentguardsList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsApi.ContentguardsList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsApi.ContentguardsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -252,12 +252,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this content guard.
     patchedContentGuard := *openapiclient.NewPatchedContentGuard() // PatchedContentGuard | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsApi.ContentguardsPartialUpdate(context.Background(), pulpId).PatchedContentGuard(patchedContentGuard).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsApi.ContentguardsPartialUpdate(context.Background(), pulpId).PatchedContentGuard(patchedContentGuard).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsApi.ContentguardsPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -273,7 +273,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this content guard. | 
+**pulpId** | **string** | A UUID string identifying this content guard. | 
 
 ### Other Parameters
 
@@ -324,13 +324,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this content guard.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsApi.ContentguardsRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsApi.ContentguardsRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsApi.ContentguardsRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -346,7 +346,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this content guard. | 
+**pulpId** | **string** | A UUID string identifying this content guard. | 
 
 ### Other Parameters
 
@@ -398,12 +398,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this content guard.
     contentGuard := *openapiclient.NewContentGuard("Name_example") // ContentGuard | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsApi.ContentguardsUpdate(context.Background(), pulpId).ContentGuard(contentGuard).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsApi.ContentguardsUpdate(context.Background(), pulpId).ContentGuard(contentGuard).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsApi.ContentguardsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -419,7 +419,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this content guard. | 
+**pulpId** | **string** | A UUID string identifying this content guard. | 
 
 ### Other Parameters
 

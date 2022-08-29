@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | Unique name of the file system exporter. | [optional] 
 **Path** | Pointer to **string** | File system location to export to. | [optional] 
-**Method** | Pointer to [**MethodEnum**](MethodEnum.md) | Method of exporting | [optional] 
+**Method** | Pointer to [**NullableMethodEnum**](MethodEnum.md) | Method of exporting | [optional] 
 
 ## Methods
 
@@ -102,6 +102,16 @@ SetMethod sets Method field to given value.
 
 HasMethod returns a boolean if a field has been set.
 
+### SetMethodNil
+
+`func (o *PatchedFilesystemExporter) SetMethodNil(b bool)`
+
+ SetMethodNil sets the value for Method to be an explicit nil
+
+### UnsetMethod
+`func (o *PatchedFilesystemExporter) UnsetMethod()`
+
+UnsetMethod ensures that no value is present for Method, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -32,8 +32,8 @@ func main() {
     copy := *openapiclient.NewCopy(map[string]interface{}(123)) // Copy | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DebCopyApi.CopyContent(context.Background()).Copy(copy).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DebCopyApi.CopyContent(context.Background()).Copy(copy).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DebCopyApi.CopyContent``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -37,8 +37,8 @@ func main() {
     filesystemExporter := *openapiclient.NewFilesystemExporter("Name_example", "Path_example") // FilesystemExporter | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ExportersFilesystemApi.ExportersCoreFilesystemCreate(context.Background()).FilesystemExporter(filesystemExporter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ExportersFilesystemApi.ExportersCoreFilesystemCreate(context.Background()).FilesystemExporter(filesystemExporter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportersFilesystemApi.ExportersCoreFilesystemCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -100,11 +100,11 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this filesystem exporter.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this filesystem exporter.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ExportersFilesystemApi.ExportersCoreFilesystemDelete(context.Background(), pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ExportersFilesystemApi.ExportersCoreFilesystemDelete(context.Background(), pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportersFilesystemApi.ExportersCoreFilesystemDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this filesystem exporter. | 
+**pulpId** | **string** | A UUID string identifying this filesystem exporter. | 
 
 ### Other Parameters
 
@@ -182,8 +182,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ExportersFilesystemApi.ExportersCoreFilesystemList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ExportersFilesystemApi.ExportersCoreFilesystemList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportersFilesystemApi.ExportersCoreFilesystemList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -254,12 +254,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this filesystem exporter.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this filesystem exporter.
     patchedFilesystemExporter := *openapiclient.NewPatchedFilesystemExporter() // PatchedFilesystemExporter | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ExportersFilesystemApi.ExportersCoreFilesystemPartialUpdate(context.Background(), pulpId).PatchedFilesystemExporter(patchedFilesystemExporter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ExportersFilesystemApi.ExportersCoreFilesystemPartialUpdate(context.Background(), pulpId).PatchedFilesystemExporter(patchedFilesystemExporter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportersFilesystemApi.ExportersCoreFilesystemPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -275,7 +275,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this filesystem exporter. | 
+**pulpId** | **string** | A UUID string identifying this filesystem exporter. | 
 
 ### Other Parameters
 
@@ -326,13 +326,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this filesystem exporter.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this filesystem exporter.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ExportersFilesystemApi.ExportersCoreFilesystemRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ExportersFilesystemApi.ExportersCoreFilesystemRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportersFilesystemApi.ExportersCoreFilesystemRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -348,7 +348,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this filesystem exporter. | 
+**pulpId** | **string** | A UUID string identifying this filesystem exporter. | 
 
 ### Other Parameters
 
@@ -400,12 +400,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this filesystem exporter.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this filesystem exporter.
     filesystemExporter := *openapiclient.NewFilesystemExporter("Name_example", "Path_example") // FilesystemExporter | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ExportersFilesystemApi.ExportersCoreFilesystemUpdate(context.Background(), pulpId).FilesystemExporter(filesystemExporter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ExportersFilesystemApi.ExportersCoreFilesystemUpdate(context.Background(), pulpId).FilesystemExporter(filesystemExporter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportersFilesystemApi.ExportersCoreFilesystemUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -421,7 +421,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this filesystem exporter. | 
+**pulpId** | **string** | A UUID string identifying this filesystem exporter. | 
 
 ### Other Parameters
 

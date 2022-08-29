@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Number** | Pointer to **int32** |  | [optional] [readonly] 
 **Repository** | Pointer to **string** |  | [optional] [readonly] 
 **BaseVersion** | Pointer to **string** | A repository version whose content was used as the initial set of content for this repository version | [optional] 
-**ContentSummary** | Pointer to [**ContentSummaryResponse**](ContentSummaryResponse.md) | Various count summaries of the content in the version and the HREF to view them. | [optional] [readonly] 
+**ContentSummary** | Pointer to [**RepositoryVersionResponseContentSummary**](RepositoryVersionResponseContentSummary.md) |  | [optional] 
 
 ## Methods
 
@@ -157,20 +157,20 @@ HasBaseVersion returns a boolean if a field has been set.
 
 ### GetContentSummary
 
-`func (o *RepositoryVersionResponse) GetContentSummary() ContentSummaryResponse`
+`func (o *RepositoryVersionResponse) GetContentSummary() RepositoryVersionResponseContentSummary`
 
 GetContentSummary returns the ContentSummary field if non-nil, zero value otherwise.
 
 ### GetContentSummaryOk
 
-`func (o *RepositoryVersionResponse) GetContentSummaryOk() (*ContentSummaryResponse, bool)`
+`func (o *RepositoryVersionResponse) GetContentSummaryOk() (*RepositoryVersionResponseContentSummary, bool)`
 
 GetContentSummaryOk returns a tuple with the ContentSummary field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContentSummary
 
-`func (o *RepositoryVersionResponse) SetContentSummary(v ContentSummaryResponse)`
+`func (o *RepositoryVersionResponse) SetContentSummary(v RepositoryVersionResponseContentSummary)`
 
 SetContentSummary sets ContentSummary field to given value.
 

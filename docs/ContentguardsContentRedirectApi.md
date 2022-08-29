@@ -38,12 +38,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this content redirect content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this content redirect content guard.
     nestedRole := *openapiclient.NewNestedRole("Role_example") // NestedRole | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectAddRole(context.Background(), pulpId).NestedRole(nestedRole).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectAddRole(context.Background(), pulpId).NestedRole(nestedRole).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectAddRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,7 +59,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this content redirect content guard. | 
+**pulpId** | **string** | A UUID string identifying this content redirect content guard. | 
 
 ### Other Parameters
 
@@ -113,8 +113,8 @@ func main() {
     contentRedirectContentGuard := *openapiclient.NewContentRedirectContentGuard("Name_example") // ContentRedirectContentGuard | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectCreate(context.Background()).ContentRedirectContentGuard(contentRedirectContentGuard).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectCreate(context.Background()).ContentRedirectContentGuard(contentRedirectContentGuard).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -176,11 +176,11 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this content redirect content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this content redirect content guard.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectDelete(context.Background(), pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectDelete(context.Background(), pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -194,7 +194,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this content redirect content guard. | 
+**pulpId** | **string** | A UUID string identifying this content redirect content guard. | 
 
 ### Other Parameters
 
@@ -256,8 +256,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -328,13 +328,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this content redirect content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this content redirect content guard.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectListRoles(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectListRoles(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectListRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -350,7 +350,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this content redirect content guard. | 
+**pulpId** | **string** | A UUID string identifying this content redirect content guard. | 
 
 ### Other Parameters
 
@@ -402,13 +402,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this content redirect content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this content redirect content guard.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectMyPermissions(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectMyPermissions(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectMyPermissions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -424,7 +424,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this content redirect content guard. | 
+**pulpId** | **string** | A UUID string identifying this content redirect content guard. | 
 
 ### Other Parameters
 
@@ -476,12 +476,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this content redirect content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this content redirect content guard.
     patchedContentRedirectContentGuard := *openapiclient.NewPatchedContentRedirectContentGuard() // PatchedContentRedirectContentGuard | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectPartialUpdate(context.Background(), pulpId).PatchedContentRedirectContentGuard(patchedContentRedirectContentGuard).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectPartialUpdate(context.Background(), pulpId).PatchedContentRedirectContentGuard(patchedContentRedirectContentGuard).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -497,7 +497,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this content redirect content guard. | 
+**pulpId** | **string** | A UUID string identifying this content redirect content guard. | 
 
 ### Other Parameters
 
@@ -548,13 +548,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this content redirect content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this content redirect content guard.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -570,7 +570,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this content redirect content guard. | 
+**pulpId** | **string** | A UUID string identifying this content redirect content guard. | 
 
 ### Other Parameters
 
@@ -622,12 +622,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this content redirect content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this content redirect content guard.
     nestedRole := *openapiclient.NewNestedRole("Role_example") // NestedRole | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectRemoveRole(context.Background(), pulpId).NestedRole(nestedRole).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectRemoveRole(context.Background(), pulpId).NestedRole(nestedRole).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectRemoveRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -643,7 +643,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this content redirect content guard. | 
+**pulpId** | **string** | A UUID string identifying this content redirect content guard. | 
 
 ### Other Parameters
 
@@ -694,12 +694,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this content redirect content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this content redirect content guard.
     contentRedirectContentGuard := *openapiclient.NewContentRedirectContentGuard("Name_example") // ContentRedirectContentGuard | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectUpdate(context.Background(), pulpId).ContentRedirectContentGuard(contentRedirectContentGuard).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectUpdate(context.Background(), pulpId).ContentRedirectContentGuard(contentRedirectContentGuard).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsContentRedirectApi.ContentguardsCoreContentRedirectUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -715,7 +715,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this content redirect content guard. | 
+**pulpId** | **string** | A UUID string identifying this content redirect content guard. | 
 
 ### Other Parameters
 

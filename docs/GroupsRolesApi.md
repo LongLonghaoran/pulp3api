@@ -36,8 +36,8 @@ func main() {
     groupRole := *openapiclient.NewGroupRole("Role_example", "ContentObject_example") // GroupRole | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GroupsRolesApi.GroupsRolesCreate(context.Background(), groupPk).GroupRole(groupRole).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GroupsRolesApi.GroupsRolesCreate(context.Background(), groupPk).GroupRole(groupRole).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GroupsRolesApi.GroupsRolesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -105,11 +105,11 @@ import (
 
 func main() {
     groupPk := "groupPk_example" // string | 
-    pulpId := TODO // string | A UUID string identifying this group role.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this group role.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GroupsRolesApi.GroupsRolesDelete(context.Background(), groupPk, pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GroupsRolesApi.GroupsRolesDelete(context.Background(), groupPk, pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GroupsRolesApi.GroupsRolesDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **groupPk** | **string** |  | 
-**pulpId** | [**string**](.md) | A UUID string identifying this group role. | 
+**pulpId** | **string** | A UUID string identifying this group role. | 
 
 ### Other Parameters
 
@@ -189,8 +189,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GroupsRolesApi.GroupsRolesList(context.Background(), groupPk).ContentObject(contentObject).Limit(limit).Offset(offset).Ordering(ordering).Role(role).RoleContains(roleContains).RoleIcontains(roleIcontains).RoleIn(roleIn).RoleStartswith(roleStartswith).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GroupsRolesApi.GroupsRolesList(context.Background(), groupPk).ContentObject(contentObject).Limit(limit).Offset(offset).Ordering(ordering).Role(role).RoleContains(roleContains).RoleIcontains(roleIcontains).RoleIn(roleIn).RoleStartswith(roleStartswith).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GroupsRolesApi.GroupsRolesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -268,13 +268,13 @@ import (
 
 func main() {
     groupPk := "groupPk_example" // string | 
-    pulpId := TODO // string | A UUID string identifying this group role.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this group role.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GroupsRolesApi.GroupsRolesRead(context.Background(), groupPk, pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GroupsRolesApi.GroupsRolesRead(context.Background(), groupPk, pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GroupsRolesApi.GroupsRolesRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **groupPk** | **string** |  | 
-**pulpId** | [**string**](.md) | A UUID string identifying this group role. | 
+**pulpId** | **string** | A UUID string identifying this group role. | 
 
 ### Other Parameters
 

@@ -34,8 +34,8 @@ func main() {
     debRelease := *openapiclient.NewDebRelease("Codename_example", "Suite_example", "Distribution_example") // DebRelease | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentReleasesApi.ContentDebReleasesCreate(context.Background()).DebRelease(debRelease).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentReleasesApi.ContentDebReleasesCreate(context.Background()).DebRelease(debRelease).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentReleasesApi.ContentDebReleasesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DebReleaseResponse**](deb.ReleaseResponse.md)
+[**DebReleaseResponse**](DebReleaseResponse.md)
 
 ### Authorization
 
@@ -110,8 +110,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentReleasesApi.ContentDebReleasesList(context.Background()).Codename(codename).Distribution(distribution).Limit(limit).Offset(offset).Ordering(ordering).RepositoryVersion(repositoryVersion).RepositoryVersionAdded(repositoryVersionAdded).RepositoryVersionRemoved(repositoryVersionRemoved).Suite(suite).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentReleasesApi.ContentDebReleasesList(context.Background()).Codename(codename).Distribution(distribution).Limit(limit).Offset(offset).Ordering(ordering).RepositoryVersion(repositoryVersion).RepositoryVersionAdded(repositoryVersionAdded).RepositoryVersionRemoved(repositoryVersionRemoved).Suite(suite).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentReleasesApi.ContentDebReleasesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginateddebReleaseResponseList**](Paginateddeb.ReleaseResponseList.md)
+[**PaginateddebReleaseResponseList**](PaginateddebReleaseResponseList.md)
 
 ### Authorization
 
@@ -183,13 +183,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this release.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this release.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentReleasesApi.ContentDebReleasesRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentReleasesApi.ContentDebReleasesRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentReleasesApi.ContentDebReleasesRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -205,7 +205,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this release. | 
+**pulpId** | **string** | A UUID string identifying this release. | 
 
 ### Other Parameters
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DebReleaseResponse**](deb.ReleaseResponse.md)
+[**DebReleaseResponse**](DebReleaseResponse.md)
 
 ### Authorization
 

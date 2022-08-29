@@ -34,8 +34,8 @@ func main() {
     debPackageIndex := *openapiclient.NewDebPackageIndex(map[string]interface{}(123), "Release_example") // DebPackageIndex | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentPackageIndicesApi.ContentDebPackageIndicesCreate(context.Background()).DebPackageIndex(debPackageIndex).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentPackageIndicesApi.ContentDebPackageIndicesCreate(context.Background()).DebPackageIndex(debPackageIndex).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentPackageIndicesApi.ContentDebPackageIndicesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DebPackageIndexResponse**](deb.PackageIndexResponse.md)
+[**DebPackageIndexResponse**](DebPackageIndexResponse.md)
 
 ### Authorization
 
@@ -111,8 +111,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentPackageIndicesApi.ContentDebPackageIndicesList(context.Background()).Architecture(architecture).Component(component).Limit(limit).Offset(offset).Ordering(ordering).RelativePath(relativePath).RepositoryVersion(repositoryVersion).RepositoryVersionAdded(repositoryVersionAdded).RepositoryVersionRemoved(repositoryVersionRemoved).Sha256(sha256).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentPackageIndicesApi.ContentDebPackageIndicesList(context.Background()).Architecture(architecture).Component(component).Limit(limit).Offset(offset).Ordering(ordering).RelativePath(relativePath).RepositoryVersion(repositoryVersion).RepositoryVersionAdded(repositoryVersionAdded).RepositoryVersionRemoved(repositoryVersionRemoved).Sha256(sha256).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentPackageIndicesApi.ContentDebPackageIndicesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginateddebPackageIndexResponseList**](Paginateddeb.PackageIndexResponseList.md)
+[**PaginateddebPackageIndexResponseList**](PaginateddebPackageIndexResponseList.md)
 
 ### Authorization
 
@@ -185,13 +185,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this package index.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this package index.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentPackageIndicesApi.ContentDebPackageIndicesRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentPackageIndicesApi.ContentDebPackageIndicesRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentPackageIndicesApi.ContentDebPackageIndicesRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -207,7 +207,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this package index. | 
+**pulpId** | **string** | A UUID string identifying this package index. | 
 
 ### Other Parameters
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DebPackageIndexResponse**](deb.PackageIndexResponse.md)
+[**DebPackageIndexResponse**](DebPackageIndexResponse.md)
 
 ### Authorization
 

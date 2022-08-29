@@ -32,8 +32,8 @@ func main() {
     repair := *openapiclient.NewRepair() // Repair | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepairApi.RepairPost(context.Background()).Repair(repair).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepairApi.RepairPost(context.Background()).Repair(repair).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepairApi.RepairPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

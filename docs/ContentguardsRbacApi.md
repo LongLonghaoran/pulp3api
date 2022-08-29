@@ -38,12 +38,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this rbac content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this rbac content guard.
     nestedRole := *openapiclient.NewNestedRole("Role_example") // NestedRole | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsRbacApi.ContentguardsCoreRbacAddRole(context.Background(), pulpId).NestedRole(nestedRole).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsRbacApi.ContentguardsCoreRbacAddRole(context.Background(), pulpId).NestedRole(nestedRole).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsRbacApi.ContentguardsCoreRbacAddRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,7 +59,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this rbac content guard. | 
+**pulpId** | **string** | A UUID string identifying this rbac content guard. | 
 
 ### Other Parameters
 
@@ -113,8 +113,8 @@ func main() {
     rBACContentGuard := *openapiclient.NewRBACContentGuard("Name_example") // RBACContentGuard | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsRbacApi.ContentguardsCoreRbacCreate(context.Background()).RBACContentGuard(rBACContentGuard).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsRbacApi.ContentguardsCoreRbacCreate(context.Background()).RBACContentGuard(rBACContentGuard).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsRbacApi.ContentguardsCoreRbacCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -176,11 +176,11 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this rbac content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this rbac content guard.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsRbacApi.ContentguardsCoreRbacDelete(context.Background(), pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsRbacApi.ContentguardsCoreRbacDelete(context.Background(), pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsRbacApi.ContentguardsCoreRbacDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -194,7 +194,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this rbac content guard. | 
+**pulpId** | **string** | A UUID string identifying this rbac content guard. | 
 
 ### Other Parameters
 
@@ -256,8 +256,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsRbacApi.ContentguardsCoreRbacList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsRbacApi.ContentguardsCoreRbacList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsRbacApi.ContentguardsCoreRbacList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -328,13 +328,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this rbac content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this rbac content guard.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsRbacApi.ContentguardsCoreRbacListRoles(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsRbacApi.ContentguardsCoreRbacListRoles(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsRbacApi.ContentguardsCoreRbacListRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -350,7 +350,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this rbac content guard. | 
+**pulpId** | **string** | A UUID string identifying this rbac content guard. | 
 
 ### Other Parameters
 
@@ -402,13 +402,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this rbac content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this rbac content guard.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsRbacApi.ContentguardsCoreRbacMyPermissions(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsRbacApi.ContentguardsCoreRbacMyPermissions(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsRbacApi.ContentguardsCoreRbacMyPermissions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -424,7 +424,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this rbac content guard. | 
+**pulpId** | **string** | A UUID string identifying this rbac content guard. | 
 
 ### Other Parameters
 
@@ -476,12 +476,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this rbac content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this rbac content guard.
     patchedRBACContentGuard := *openapiclient.NewPatchedRBACContentGuard() // PatchedRBACContentGuard | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsRbacApi.ContentguardsCoreRbacPartialUpdate(context.Background(), pulpId).PatchedRBACContentGuard(patchedRBACContentGuard).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsRbacApi.ContentguardsCoreRbacPartialUpdate(context.Background(), pulpId).PatchedRBACContentGuard(patchedRBACContentGuard).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsRbacApi.ContentguardsCoreRbacPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -497,7 +497,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this rbac content guard. | 
+**pulpId** | **string** | A UUID string identifying this rbac content guard. | 
 
 ### Other Parameters
 
@@ -548,13 +548,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this rbac content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this rbac content guard.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsRbacApi.ContentguardsCoreRbacRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsRbacApi.ContentguardsCoreRbacRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsRbacApi.ContentguardsCoreRbacRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -570,7 +570,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this rbac content guard. | 
+**pulpId** | **string** | A UUID string identifying this rbac content guard. | 
 
 ### Other Parameters
 
@@ -622,12 +622,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this rbac content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this rbac content guard.
     nestedRole := *openapiclient.NewNestedRole("Role_example") // NestedRole | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsRbacApi.ContentguardsCoreRbacRemoveRole(context.Background(), pulpId).NestedRole(nestedRole).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsRbacApi.ContentguardsCoreRbacRemoveRole(context.Background(), pulpId).NestedRole(nestedRole).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsRbacApi.ContentguardsCoreRbacRemoveRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -643,7 +643,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this rbac content guard. | 
+**pulpId** | **string** | A UUID string identifying this rbac content guard. | 
 
 ### Other Parameters
 
@@ -694,12 +694,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this rbac content guard.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this rbac content guard.
     rBACContentGuard := *openapiclient.NewRBACContentGuard("Name_example") // RBACContentGuard | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentguardsRbacApi.ContentguardsCoreRbacUpdate(context.Background(), pulpId).RBACContentGuard(rBACContentGuard).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentguardsRbacApi.ContentguardsCoreRbacUpdate(context.Background(), pulpId).RBACContentGuard(rBACContentGuard).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentguardsRbacApi.ContentguardsCoreRbacUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -715,7 +715,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this rbac content guard. | 
+**pulpId** | **string** | A UUID string identifying this rbac content guard. | 
 
 ### Other Parameters
 

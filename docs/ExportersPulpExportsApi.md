@@ -36,8 +36,8 @@ func main() {
     pulpExport := *openapiclient.NewPulpExport() // PulpExport | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ExportersPulpExportsApi.ExportersCorePulpExportsCreate(context.Background(), exporterPk).PulpExport(pulpExport).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ExportersPulpExportsApi.ExportersCorePulpExportsCreate(context.Background(), exporterPk).PulpExport(pulpExport).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportersPulpExportsApi.ExportersCorePulpExportsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -105,11 +105,11 @@ import (
 
 func main() {
     exporterPk := "exporterPk_example" // string | 
-    pulpId := TODO // string | A UUID string identifying this pulp export.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this pulp export.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ExportersPulpExportsApi.ExportersCorePulpExportsDelete(context.Background(), exporterPk, pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ExportersPulpExportsApi.ExportersCorePulpExportsDelete(context.Background(), exporterPk, pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportersPulpExportsApi.ExportersCorePulpExportsDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **exporterPk** | **string** |  | 
-**pulpId** | [**string**](.md) | A UUID string identifying this pulp export. | 
+**pulpId** | **string** | A UUID string identifying this pulp export. | 
 
 ### Other Parameters
 
@@ -182,8 +182,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ExportersPulpExportsApi.ExportersCorePulpExportsList(context.Background(), exporterPk).Limit(limit).Offset(offset).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ExportersPulpExportsApi.ExportersCorePulpExportsList(context.Background(), exporterPk).Limit(limit).Offset(offset).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportersPulpExportsApi.ExportersCorePulpExportsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -254,13 +254,13 @@ import (
 
 func main() {
     exporterPk := "exporterPk_example" // string | 
-    pulpId := TODO // string | A UUID string identifying this pulp export.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this pulp export.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ExportersPulpExportsApi.ExportersCorePulpExportsRead(context.Background(), exporterPk, pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ExportersPulpExportsApi.ExportersCorePulpExportsRead(context.Background(), exporterPk, pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportersPulpExportsApi.ExportersCorePulpExportsRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **exporterPk** | **string** |  | 
-**pulpId** | [**string**](.md) | A UUID string identifying this pulp export. | 
+**pulpId** | **string** | A UUID string identifying this pulp export. | 
 
 ### Other Parameters
 

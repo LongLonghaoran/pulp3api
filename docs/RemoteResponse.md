@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **PulpLastUpdated** | Pointer to **time.Time** | Timestamp of the most recent update of the remote. | [optional] [readonly] 
 **DownloadConcurrency** | Pointer to **NullableInt32** | Total number of simultaneous connections. If not set then the default value will be used. | [optional] 
 **MaxRetries** | Pointer to **NullableInt32** | Maximum number of retry attempts after a download failure. If not set then the default value (3) will be used. | [optional] 
-**Policy** | Pointer to [**PolicyDb6Enum**](PolicyDb6Enum.md) | The policy to use when downloading content. | [optional] 
+**Policy** | Pointer to [**NullablePolicyDb6Enum**](PolicyDb6Enum.md) | The policy to use when downloading content. | [optional] 
 **TotalTimeout** | Pointer to **NullableFloat64** | aiohttp.ClientTimeout.total (q.v.) for download-connections. The default is null, which will cause the default from the aiohttp library to be used. | [optional] 
 **ConnectTimeout** | Pointer to **NullableFloat64** | aiohttp.ClientTimeout.connect (q.v.) for download-connections. The default is null, which will cause the default from the aiohttp library to be used. | [optional] 
 **SockConnectTimeout** | Pointer to **NullableFloat64** | aiohttp.ClientTimeout.sock_connect (q.v.) for download-connections. The default is null, which will cause the default from the aiohttp library to be used. | [optional] 
@@ -408,6 +408,16 @@ SetPolicy sets Policy field to given value.
 
 HasPolicy returns a boolean if a field has been set.
 
+### SetPolicyNil
+
+`func (o *RemoteResponse) SetPolicyNil(b bool)`
+
+ SetPolicyNil sets the value for Policy to be an explicit nil
+
+### UnsetPolicy
+`func (o *RemoteResponse) UnsetPolicy()`
+
+UnsetPolicy ensures that no value is present for Policy, not even an explicit nil
 ### GetTotalTimeout
 
 `func (o *RemoteResponse) GetTotalTimeout() float64`

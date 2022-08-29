@@ -51,8 +51,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkersApi.WorkersList(context.Background()).LastHeartbeat(lastHeartbeat).LastHeartbeatGt(lastHeartbeatGt).LastHeartbeatGte(lastHeartbeatGte).LastHeartbeatLt(lastHeartbeatLt).LastHeartbeatLte(lastHeartbeatLte).LastHeartbeatRange(lastHeartbeatRange).Limit(limit).Missing(missing).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Online(online).Ordering(ordering).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkersApi.WorkersList(context.Background()).LastHeartbeat(lastHeartbeat).LastHeartbeatGt(lastHeartbeatGt).LastHeartbeatGte(lastHeartbeatGte).LastHeartbeatLt(lastHeartbeatLt).LastHeartbeatLte(lastHeartbeatLte).LastHeartbeatRange(lastHeartbeatRange).Limit(limit).Missing(missing).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Online(online).Ordering(ordering).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkersApi.WorkersList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -131,13 +131,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this worker.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this worker.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.WorkersApi.WorkersRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WorkersApi.WorkersRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkersApi.WorkersRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -153,7 +153,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this worker. | 
+**pulpId** | **string** | A UUID string identifying this worker. | 
 
 ### Other Parameters
 

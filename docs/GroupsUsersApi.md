@@ -35,8 +35,8 @@ func main() {
     groupUser := *openapiclient.NewGroupUser("Username_example") // GroupUser | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GroupsUsersApi.GroupsUsersCreate(context.Background(), groupPk).GroupUser(groupUser).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GroupsUsersApi.GroupsUsersCreate(context.Background(), groupPk).GroupUser(groupUser).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GroupsUsersApi.GroupsUsersCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -107,8 +107,8 @@ func main() {
     id := int32(56) // int32 | A unique integer value identifying this user.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GroupsUsersApi.GroupsUsersDelete(context.Background(), groupPk, id).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GroupsUsersApi.GroupsUsersDelete(context.Background(), groupPk, id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GroupsUsersApi.GroupsUsersDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -181,8 +181,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GroupsUsersApi.GroupsUsersList(context.Background(), groupPk).Limit(limit).Offset(offset).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.GroupsUsersApi.GroupsUsersList(context.Background(), groupPk).Limit(limit).Offset(offset).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GroupsUsersApi.GroupsUsersList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

@@ -46,8 +46,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AccessPoliciesApi.AccessPoliciesList(context.Background()).Customized(customized).Limit(limit).Offset(offset).Ordering(ordering).ViewsetName(viewsetName).ViewsetNameContains(viewsetNameContains).ViewsetNameIcontains(viewsetNameIcontains).ViewsetNameIn(viewsetNameIn).ViewsetNameStartswith(viewsetNameStartswith).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AccessPoliciesApi.AccessPoliciesList(context.Background()).Customized(customized).Limit(limit).Offset(offset).Ordering(ordering).ViewsetName(viewsetName).ViewsetNameContains(viewsetNameContains).ViewsetNameIcontains(viewsetNameIcontains).ViewsetNameIn(viewsetNameIn).ViewsetNameStartswith(viewsetNameStartswith).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AccessPoliciesApi.AccessPoliciesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -119,12 +119,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this access policy.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this access policy.
     patchedAccessPolicy := *openapiclient.NewPatchedAccessPolicy() // PatchedAccessPolicy | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AccessPoliciesApi.AccessPoliciesPartialUpdate(context.Background(), pulpId).PatchedAccessPolicy(patchedAccessPolicy).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AccessPoliciesApi.AccessPoliciesPartialUpdate(context.Background(), pulpId).PatchedAccessPolicy(patchedAccessPolicy).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AccessPoliciesApi.AccessPoliciesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -140,7 +140,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this access policy. | 
+**pulpId** | **string** | A UUID string identifying this access policy. | 
 
 ### Other Parameters
 
@@ -191,13 +191,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this access policy.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this access policy.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AccessPoliciesApi.AccessPoliciesRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AccessPoliciesApi.AccessPoliciesRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AccessPoliciesApi.AccessPoliciesRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -213,7 +213,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this access policy. | 
+**pulpId** | **string** | A UUID string identifying this access policy. | 
 
 ### Other Parameters
 
@@ -265,11 +265,11 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this access policy.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this access policy.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AccessPoliciesApi.AccessPoliciesReset(context.Background(), pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AccessPoliciesApi.AccessPoliciesReset(context.Background(), pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AccessPoliciesApi.AccessPoliciesReset``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -285,7 +285,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this access policy. | 
+**pulpId** | **string** | A UUID string identifying this access policy. | 
 
 ### Other Parameters
 
@@ -335,12 +335,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this access policy.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this access policy.
     accessPolicy := *openapiclient.NewAccessPolicy([]map[string]interface{}{map[string]interface{}(123)}) // AccessPolicy | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.AccessPoliciesApi.AccessPoliciesUpdate(context.Background(), pulpId).AccessPolicy(accessPolicy).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AccessPoliciesApi.AccessPoliciesUpdate(context.Background(), pulpId).AccessPolicy(accessPolicy).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AccessPoliciesApi.AccessPoliciesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -356,7 +356,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this access policy. | 
+**pulpId** | **string** | A UUID string identifying this access policy. | 
 
 ### Other Parameters
 

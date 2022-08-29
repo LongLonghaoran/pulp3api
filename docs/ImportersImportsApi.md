@@ -36,8 +36,8 @@ func main() {
     import_ := *openapiclient.NewImport("Task_example", map[string]interface{}(123)) // Import | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ImportersImportsApi.ImportersImportsCreate(context.Background(), importerPk).Import_(import_).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ImportersImportsApi.ImportersImportsCreate(context.Background(), importerPk).Import_(import_).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportersImportsApi.ImportersImportsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -105,11 +105,11 @@ import (
 
 func main() {
     importerPk := "importerPk_example" // string | 
-    pulpId := TODO // string | A UUID string identifying this import.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this import.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ImportersImportsApi.ImportersImportsDelete(context.Background(), importerPk, pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ImportersImportsApi.ImportersImportsDelete(context.Background(), importerPk, pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportersImportsApi.ImportersImportsDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **importerPk** | **string** |  | 
-**pulpId** | [**string**](.md) | A UUID string identifying this import. | 
+**pulpId** | **string** | A UUID string identifying this import. | 
 
 ### Other Parameters
 
@@ -182,8 +182,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ImportersImportsApi.ImportersImportsList(context.Background(), importerPk).Limit(limit).Offset(offset).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ImportersImportsApi.ImportersImportsList(context.Background(), importerPk).Limit(limit).Offset(offset).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportersImportsApi.ImportersImportsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -254,13 +254,13 @@ import (
 
 func main() {
     importerPk := "importerPk_example" // string | 
-    pulpId := TODO // string | A UUID string identifying this import.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this import.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ImportersImportsApi.ImportersImportsRead(context.Background(), importerPk, pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ImportersImportsApi.ImportersImportsRead(context.Background(), importerPk, pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportersImportsApi.ImportersImportsRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **importerPk** | **string** |  | 
-**pulpId** | [**string**](.md) | A UUID string identifying this import. | 
+**pulpId** | **string** | A UUID string identifying this import. | 
 
 ### Other Parameters
 

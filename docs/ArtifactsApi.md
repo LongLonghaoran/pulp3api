@@ -42,8 +42,8 @@ func main() {
     sha512 := "sha512_example" // string | The SHA-512 checksum of the file if available. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ArtifactsApi.ArtifactsCreate(context.Background()).File(file).Size(size).Md5(md5).Sha1(sha1).Sha224(sha224).Sha256(sha256).Sha384(sha384).Sha512(sha512).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ArtifactsApi.ArtifactsCreate(context.Background()).File(file).Size(size).Md5(md5).Sha1(sha1).Sha224(sha224).Sha256(sha256).Sha384(sha384).Sha512(sha512).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ArtifactsApi.ArtifactsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -112,11 +112,11 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this artifact.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this artifact.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ArtifactsApi.ArtifactsDelete(context.Background(), pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ArtifactsApi.ArtifactsDelete(context.Background(), pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ArtifactsApi.ArtifactsDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -130,7 +130,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this artifact. | 
+**pulpId** | **string** | A UUID string identifying this artifact. | 
 
 ### Other Parameters
 
@@ -194,8 +194,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ArtifactsApi.ArtifactsList(context.Background()).Limit(limit).Md5(md5).Offset(offset).Ordering(ordering).RepositoryVersion(repositoryVersion).Sha1(sha1).Sha224(sha224).Sha256(sha256).Sha384(sha384).Sha512(sha512).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ArtifactsApi.ArtifactsList(context.Background()).Limit(limit).Md5(md5).Offset(offset).Ordering(ordering).RepositoryVersion(repositoryVersion).Sha1(sha1).Sha224(sha224).Sha256(sha256).Sha384(sha384).Sha512(sha512).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ArtifactsApi.ArtifactsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -268,13 +268,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this artifact.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this artifact.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ArtifactsApi.ArtifactsRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ArtifactsApi.ArtifactsRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ArtifactsApi.ArtifactsRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -290,7 +290,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this artifact. | 
+**pulpId** | **string** | A UUID string identifying this artifact. | 
 
 ### Other Parameters
 

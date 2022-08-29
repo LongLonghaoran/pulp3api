@@ -34,8 +34,8 @@ func main() {
     debPackageReleaseComponent := *openapiclient.NewDebPackageReleaseComponent("Package_example", "ReleaseComponent_example") // DebPackageReleaseComponent | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentPackageReleaseComponentsApi.ContentDebPackageReleaseComponentsCreate(context.Background()).DebPackageReleaseComponent(debPackageReleaseComponent).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentPackageReleaseComponentsApi.ContentDebPackageReleaseComponentsCreate(context.Background()).DebPackageReleaseComponent(debPackageReleaseComponent).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentPackageReleaseComponentsApi.ContentDebPackageReleaseComponentsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DebPackageReleaseComponentResponse**](deb.PackageReleaseComponentResponse.md)
+[**DebPackageReleaseComponentResponse**](DebPackageReleaseComponentResponse.md)
 
 ### Authorization
 
@@ -100,8 +100,8 @@ func main() {
     limit := int32(56) // int32 | Number of results to return per page. (optional)
     offset := int32(56) // int32 | The initial index from which to return the results. (optional)
     ordering := []string{"Ordering_example"} // []string | Ordering (optional)
-    package_ := TODO // string | Filter results where package matches value (optional)
-    releaseComponent := TODO // string | Filter results where release_component matches value (optional)
+    package_ := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filter results where package matches value (optional)
+    releaseComponent := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filter results where release_component matches value (optional)
     repositoryVersion := "repositoryVersion_example" // string | Repository Version referenced by HREF (optional)
     repositoryVersionAdded := "repositoryVersionAdded_example" // string | Repository Version referenced by HREF (optional)
     repositoryVersionRemoved := "repositoryVersionRemoved_example" // string | Repository Version referenced by HREF (optional)
@@ -109,8 +109,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentPackageReleaseComponentsApi.ContentDebPackageReleaseComponentsList(context.Background()).Limit(limit).Offset(offset).Ordering(ordering).Package_(package_).ReleaseComponent(releaseComponent).RepositoryVersion(repositoryVersion).RepositoryVersionAdded(repositoryVersionAdded).RepositoryVersionRemoved(repositoryVersionRemoved).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentPackageReleaseComponentsApi.ContentDebPackageReleaseComponentsList(context.Background()).Limit(limit).Offset(offset).Ordering(ordering).Package_(package_).ReleaseComponent(releaseComponent).RepositoryVersion(repositoryVersion).RepositoryVersionAdded(repositoryVersionAdded).RepositoryVersionRemoved(repositoryVersionRemoved).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentPackageReleaseComponentsApi.ContentDebPackageReleaseComponentsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -134,8 +134,8 @@ Name | Type | Description  | Notes
  **limit** | **int32** | Number of results to return per page. | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **[]string** | Ordering | 
- **package_** | [**string**](string.md) | Filter results where package matches value | 
- **releaseComponent** | [**string**](string.md) | Filter results where release_component matches value | 
+ **package_** | **string** | Filter results where package matches value | 
+ **releaseComponent** | **string** | Filter results where release_component matches value | 
  **repositoryVersion** | **string** | Repository Version referenced by HREF | 
  **repositoryVersionAdded** | **string** | Repository Version referenced by HREF | 
  **repositoryVersionRemoved** | **string** | Repository Version referenced by HREF | 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginateddebPackageReleaseComponentResponseList**](Paginateddeb.PackageReleaseComponentResponseList.md)
+[**PaginateddebPackageReleaseComponentResponseList**](PaginateddebPackageReleaseComponentResponseList.md)
 
 ### Authorization
 
@@ -181,13 +181,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this package release component.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this package release component.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentPackageReleaseComponentsApi.ContentDebPackageReleaseComponentsRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentPackageReleaseComponentsApi.ContentDebPackageReleaseComponentsRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentPackageReleaseComponentsApi.ContentDebPackageReleaseComponentsRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -203,7 +203,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this package release component. | 
+**pulpId** | **string** | A UUID string identifying this package release component. | 
 
 ### Other Parameters
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DebPackageReleaseComponentResponse**](deb.PackageReleaseComponentResponse.md)
+[**DebPackageReleaseComponentResponse**](DebPackageReleaseComponentResponse.md)
 
 ### Authorization
 

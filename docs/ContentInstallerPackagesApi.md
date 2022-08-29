@@ -38,8 +38,8 @@ func main() {
     upload := "upload_example" // string | An uncommitted upload that may be turned into the artifact of the content unit. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentInstallerPackagesApi.ContentDebInstallerPackagesCreate(context.Background()).Artifact(artifact).RelativePath(relativePath).File(file).Repository(repository).Upload(upload).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentInstallerPackagesApi.ContentDebInstallerPackagesCreate(context.Background()).Artifact(artifact).RelativePath(relativePath).File(file).Repository(repository).Upload(upload).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentInstallerPackagesApi.ContentDebInstallerPackagesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -132,8 +132,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentInstallerPackagesApi.ContentDebInstallerPackagesList(context.Background()).Architecture(architecture).AutoBuiltPackage(autoBuiltPackage).BuildEssential(buildEssential).BuiltUsing(builtUsing).Essential(essential).InstalledSize(installedSize).Limit(limit).Maintainer(maintainer).MultiArch(multiArch).Offset(offset).Ordering(ordering).Origin(origin).OriginalMaintainer(originalMaintainer).Package_(package_).Priority(priority).RepositoryVersion(repositoryVersion).RepositoryVersionAdded(repositoryVersionAdded).RepositoryVersionRemoved(repositoryVersionRemoved).Section(section).Sha256(sha256).Source(source).Tag(tag).Version(version).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentInstallerPackagesApi.ContentDebInstallerPackagesList(context.Background()).Architecture(architecture).AutoBuiltPackage(autoBuiltPackage).BuildEssential(buildEssential).BuiltUsing(builtUsing).Essential(essential).InstalledSize(installedSize).Limit(limit).Maintainer(maintainer).MultiArch(multiArch).Offset(offset).Ordering(ordering).Origin(origin).OriginalMaintainer(originalMaintainer).Package_(package_).Priority(priority).RepositoryVersion(repositoryVersion).RepositoryVersionAdded(repositoryVersionAdded).RepositoryVersionRemoved(repositoryVersionRemoved).Section(section).Sha256(sha256).Source(source).Tag(tag).Version(version).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentInstallerPackagesApi.ContentDebInstallerPackagesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginateddebBasePackageResponseList**](Paginateddeb.BasePackageResponseList.md)
+[**PaginateddebBasePackageResponseList**](PaginateddebBasePackageResponseList.md)
 
 ### Authorization
 
@@ -219,13 +219,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this installer package.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this installer package.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentInstallerPackagesApi.ContentDebInstallerPackagesRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentInstallerPackagesApi.ContentDebInstallerPackagesRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentInstallerPackagesApi.ContentDebInstallerPackagesRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -241,7 +241,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this installer package. | 
+**pulpId** | **string** | A UUID string identifying this installer package. | 
 
 ### Other Parameters
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DebBasePackageResponse**](deb.BasePackageResponse.md)
+[**DebBasePackageResponse**](DebBasePackageResponse.md)
 
 ### Authorization
 

@@ -39,8 +39,8 @@ func main() {
     debAptRepository := *openapiclient.NewDebAptRepository("Name_example") // DebAptRepository | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesAptApi.RepositoriesDebAptCreate(context.Background()).DebAptRepository(debAptRepository).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesAptApi.RepositoriesDebAptCreate(context.Background()).DebAptRepository(debAptRepository).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesAptApi.RepositoriesDebAptCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DebAptRepositoryResponse**](deb.AptRepositoryResponse.md)
+[**DebAptRepositoryResponse**](DebAptRepositoryResponse.md)
 
 ### Authorization
 
@@ -102,11 +102,11 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this apt repository.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this apt repository.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesAptApi.RepositoriesDebAptDelete(context.Background(), pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesAptApi.RepositoriesDebAptDelete(context.Background(), pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesAptApi.RepositoriesDebAptDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -122,7 +122,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this apt repository. | 
+**pulpId** | **string** | A UUID string identifying this apt repository. | 
 
 ### Other Parameters
 
@@ -185,8 +185,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesAptApi.RepositoriesDebAptList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).PulpLabelSelect(pulpLabelSelect).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesAptApi.RepositoriesDebAptList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).PulpLabelSelect(pulpLabelSelect).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesAptApi.RepositoriesDebAptList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginateddebAptRepositoryResponseList**](Paginateddeb.AptRepositoryResponseList.md)
+[**PaginateddebAptRepositoryResponseList**](PaginateddebAptRepositoryResponseList.md)
 
 ### Authorization
 
@@ -258,12 +258,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this apt repository.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this apt repository.
     repositoryAddRemoveContent := *openapiclient.NewRepositoryAddRemoveContent() // RepositoryAddRemoveContent | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesAptApi.RepositoriesDebAptModify(context.Background(), pulpId).RepositoryAddRemoveContent(repositoryAddRemoveContent).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesAptApi.RepositoriesDebAptModify(context.Background(), pulpId).RepositoryAddRemoveContent(repositoryAddRemoveContent).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesAptApi.RepositoriesDebAptModify``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -279,7 +279,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this apt repository. | 
+**pulpId** | **string** | A UUID string identifying this apt repository. | 
 
 ### Other Parameters
 
@@ -330,12 +330,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this apt repository.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this apt repository.
     patcheddebAptRepository := *openapiclient.NewPatcheddebAptRepository() // PatcheddebAptRepository | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesAptApi.RepositoriesDebAptPartialUpdate(context.Background(), pulpId).PatcheddebAptRepository(patcheddebAptRepository).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesAptApi.RepositoriesDebAptPartialUpdate(context.Background(), pulpId).PatcheddebAptRepository(patcheddebAptRepository).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesAptApi.RepositoriesDebAptPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -351,7 +351,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this apt repository. | 
+**pulpId** | **string** | A UUID string identifying this apt repository. | 
 
 ### Other Parameters
 
@@ -402,13 +402,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this apt repository.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this apt repository.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesAptApi.RepositoriesDebAptRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesAptApi.RepositoriesDebAptRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesAptApi.RepositoriesDebAptRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -424,7 +424,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this apt repository. | 
+**pulpId** | **string** | A UUID string identifying this apt repository. | 
 
 ### Other Parameters
 
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DebAptRepositoryResponse**](deb.AptRepositoryResponse.md)
+[**DebAptRepositoryResponse**](DebAptRepositoryResponse.md)
 
 ### Authorization
 
@@ -476,12 +476,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this apt repository.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this apt repository.
     repositorySyncURL := *openapiclient.NewRepositorySyncURL() // RepositorySyncURL | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesAptApi.RepositoriesDebAptSync(context.Background(), pulpId).RepositorySyncURL(repositorySyncURL).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesAptApi.RepositoriesDebAptSync(context.Background(), pulpId).RepositorySyncURL(repositorySyncURL).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesAptApi.RepositoriesDebAptSync``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -497,7 +497,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this apt repository. | 
+**pulpId** | **string** | A UUID string identifying this apt repository. | 
 
 ### Other Parameters
 
@@ -548,12 +548,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this apt repository.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this apt repository.
     debAptRepository := *openapiclient.NewDebAptRepository("Name_example") // DebAptRepository | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesAptApi.RepositoriesDebAptUpdate(context.Background(), pulpId).DebAptRepository(debAptRepository).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesAptApi.RepositoriesDebAptUpdate(context.Background(), pulpId).DebAptRepository(debAptRepository).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesAptApi.RepositoriesDebAptUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -569,7 +569,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this apt repository. | 
+**pulpId** | **string** | A UUID string identifying this apt repository. | 
 
 ### Other Parameters
 

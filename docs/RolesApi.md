@@ -37,8 +37,8 @@ func main() {
     role := *openapiclient.NewRole("Name_example", []string{"Permissions_example"}) // Role | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RolesApi.RolesCreate(context.Background()).Role(role).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RolesApi.RolesCreate(context.Background()).Role(role).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RolesApi.RolesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -100,11 +100,11 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this role.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this role.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RolesApi.RolesDelete(context.Background(), pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RolesApi.RolesDelete(context.Background(), pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RolesApi.RolesDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -118,7 +118,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this role. | 
+**pulpId** | **string** | A UUID string identifying this role. | 
 
 ### Other Parameters
 
@@ -187,8 +187,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RolesApi.RolesList(context.Background()).ContainsPermission(containsPermission).Description(description).DescriptionContains(descriptionContains).DescriptionIcontains(descriptionIcontains).DescriptionIexact(descriptionIexact).ForObjectType(forObjectType).Limit(limit).Locked(locked).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RolesApi.RolesList(context.Background()).ContainsPermission(containsPermission).Description(description).DescriptionContains(descriptionContains).DescriptionIcontains(descriptionIcontains).DescriptionIexact(descriptionIexact).ForObjectType(forObjectType).Limit(limit).Locked(locked).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RolesApi.RolesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -266,12 +266,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this role.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this role.
     patchedRole := *openapiclient.NewPatchedRole() // PatchedRole | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RolesApi.RolesPartialUpdate(context.Background(), pulpId).PatchedRole(patchedRole).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RolesApi.RolesPartialUpdate(context.Background(), pulpId).PatchedRole(patchedRole).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RolesApi.RolesPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -287,7 +287,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this role. | 
+**pulpId** | **string** | A UUID string identifying this role. | 
 
 ### Other Parameters
 
@@ -338,13 +338,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this role.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this role.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RolesApi.RolesRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RolesApi.RolesRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RolesApi.RolesRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -360,7 +360,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this role. | 
+**pulpId** | **string** | A UUID string identifying this role. | 
 
 ### Other Parameters
 
@@ -412,12 +412,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this role.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this role.
     role := *openapiclient.NewRole("Name_example", []string{"Permissions_example"}) // Role | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RolesApi.RolesUpdate(context.Background(), pulpId).Role(role).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RolesApi.RolesUpdate(context.Background(), pulpId).Role(role).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RolesApi.RolesUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -433,7 +433,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this role. | 
+**pulpId** | **string** | A UUID string identifying this role. | 
 
 ### Other Parameters
 

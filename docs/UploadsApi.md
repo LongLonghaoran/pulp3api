@@ -34,12 +34,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this upload.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this upload.
     uploadCommit := *openapiclient.NewUploadCommit("Sha256_example") // UploadCommit | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.UploadsApi.UploadsCommit(context.Background(), pulpId).UploadCommit(uploadCommit).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UploadsApi.UploadsCommit(context.Background(), pulpId).UploadCommit(uploadCommit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UploadsApi.UploadsCommit``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -55,7 +55,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this upload. | 
+**pulpId** | **string** | A UUID string identifying this upload. | 
 
 ### Other Parameters
 
@@ -109,8 +109,8 @@ func main() {
     upload := *openapiclient.NewUpload(int32(123)) // Upload | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.UploadsApi.UploadsCreate(context.Background()).Upload(upload).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UploadsApi.UploadsCreate(context.Background()).Upload(upload).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UploadsApi.UploadsCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -172,11 +172,11 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this upload.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this upload.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.UploadsApi.UploadsDelete(context.Background(), pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UploadsApi.UploadsDelete(context.Background(), pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UploadsApi.UploadsDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -190,7 +190,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this upload. | 
+**pulpId** | **string** | A UUID string identifying this upload. | 
 
 ### Other Parameters
 
@@ -246,8 +246,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.UploadsApi.UploadsList(context.Background()).Limit(limit).Offset(offset).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UploadsApi.UploadsList(context.Background()).Limit(limit).Offset(offset).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UploadsApi.UploadsList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -312,13 +312,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this upload.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this upload.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.UploadsApi.UploadsRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UploadsApi.UploadsRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UploadsApi.UploadsRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -334,7 +334,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this upload. | 
+**pulpId** | **string** | A UUID string identifying this upload. | 
 
 ### Other Parameters
 
@@ -387,13 +387,13 @@ import (
 
 func main() {
     contentRange := "contentRange_example" // string | The Content-Range header specifies the location of the file chunk within the file.
-    pulpId := TODO // string | A UUID string identifying this upload.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this upload.
     file := os.NewFile(1234, "some_file") // *os.File | A chunk of the uploaded file.
     sha256 := "sha256_example" // string | The SHA-256 checksum of the chunk if available. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.UploadsApi.UploadsUpdate(context.Background(), pulpId).ContentRange(contentRange).File(file).Sha256(sha256).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.UploadsApi.UploadsUpdate(context.Background(), pulpId).ContentRange(contentRange).File(file).Sha256(sha256).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UploadsApi.UploadsUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -409,7 +409,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this upload. | 
+**pulpId** | **string** | A UUID string identifying this upload. | 
 
 ### Other Parameters
 

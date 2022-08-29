@@ -34,12 +34,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this task schedule.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this task schedule.
     nestedRole := *openapiclient.NewNestedRole("Role_example") // NestedRole | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TaskSchedulesApi.TaskSchedulesAddRole(context.Background(), pulpId).NestedRole(nestedRole).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TaskSchedulesApi.TaskSchedulesAddRole(context.Background(), pulpId).NestedRole(nestedRole).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaskSchedulesApi.TaskSchedulesAddRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -55,7 +55,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this task schedule. | 
+**pulpId** | **string** | A UUID string identifying this task schedule. | 
 
 ### Other Parameters
 
@@ -117,8 +117,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TaskSchedulesApi.TaskSchedulesList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).Offset(offset).Ordering(ordering).TaskName(taskName).TaskNameContains(taskNameContains).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TaskSchedulesApi.TaskSchedulesList(context.Background()).Limit(limit).Name(name).NameContains(nameContains).Offset(offset).Ordering(ordering).TaskName(taskName).TaskNameContains(taskNameContains).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaskSchedulesApi.TaskSchedulesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -188,13 +188,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this task schedule.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this task schedule.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TaskSchedulesApi.TaskSchedulesListRoles(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TaskSchedulesApi.TaskSchedulesListRoles(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaskSchedulesApi.TaskSchedulesListRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -210,7 +210,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this task schedule. | 
+**pulpId** | **string** | A UUID string identifying this task schedule. | 
 
 ### Other Parameters
 
@@ -262,13 +262,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this task schedule.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this task schedule.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TaskSchedulesApi.TaskSchedulesMyPermissions(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TaskSchedulesApi.TaskSchedulesMyPermissions(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaskSchedulesApi.TaskSchedulesMyPermissions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -284,7 +284,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this task schedule. | 
+**pulpId** | **string** | A UUID string identifying this task schedule. | 
 
 ### Other Parameters
 
@@ -336,13 +336,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this task schedule.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this task schedule.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TaskSchedulesApi.TaskSchedulesRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TaskSchedulesApi.TaskSchedulesRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaskSchedulesApi.TaskSchedulesRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -358,7 +358,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this task schedule. | 
+**pulpId** | **string** | A UUID string identifying this task schedule. | 
 
 ### Other Parameters
 
@@ -410,12 +410,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this task schedule.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this task schedule.
     nestedRole := *openapiclient.NewNestedRole("Role_example") // NestedRole | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.TaskSchedulesApi.TaskSchedulesRemoveRole(context.Background(), pulpId).NestedRole(nestedRole).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.TaskSchedulesApi.TaskSchedulesRemoveRole(context.Background(), pulpId).NestedRole(nestedRole).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaskSchedulesApi.TaskSchedulesRemoveRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -431,7 +431,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this task schedule. | 
+**pulpId** | **string** | A UUID string identifying this task schedule. | 
 
 ### Other Parameters
 

@@ -29,11 +29,11 @@ import (
 )
 
 func main() {
-    reclaimSpace := *openapiclient.NewReclaimSpace([]interface{}{interface{}(123)}) // ReclaimSpace | 
+    reclaimSpace := *openapiclient.NewReclaimSpace([]interface{}{nil}) // ReclaimSpace | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RepositoriesReclaimSpaceApi.RepositoriesReclaimSpaceReclaim(context.Background()).ReclaimSpace(reclaimSpace).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RepositoriesReclaimSpaceApi.RepositoriesReclaimSpaceReclaim(context.Background()).ReclaimSpace(reclaimSpace).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesReclaimSpaceApi.RepositoriesReclaimSpaceReclaim``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

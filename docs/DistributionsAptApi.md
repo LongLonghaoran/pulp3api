@@ -37,8 +37,8 @@ func main() {
     debAptDistribution := *openapiclient.NewDebAptDistribution("BasePath_example", "Name_example") // DebAptDistribution | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DistributionsAptApi.DistributionsDebAptCreate(context.Background()).DebAptDistribution(debAptDistribution).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DistributionsAptApi.DistributionsDebAptCreate(context.Background()).DebAptDistribution(debAptDistribution).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DistributionsAptApi.DistributionsDebAptCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -100,11 +100,11 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this apt distribution.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this apt distribution.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DistributionsAptApi.DistributionsDebAptDelete(context.Background(), pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DistributionsAptApi.DistributionsDebAptDelete(context.Background(), pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DistributionsAptApi.DistributionsDebAptDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this apt distribution. | 
+**pulpId** | **string** | A UUID string identifying this apt distribution. | 
 
 ### Other Parameters
 
@@ -187,8 +187,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DistributionsAptApi.DistributionsDebAptList(context.Background()).BasePath(basePath).BasePathContains(basePathContains).BasePathIcontains(basePathIcontains).BasePathIn(basePathIn).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).PulpLabelSelect(pulpLabelSelect).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DistributionsAptApi.DistributionsDebAptList(context.Background()).BasePath(basePath).BasePathContains(basePathContains).BasePathIcontains(basePathIcontains).BasePathIn(basePathIn).Limit(limit).Name(name).NameContains(nameContains).NameIcontains(nameIcontains).NameIn(nameIn).NameStartswith(nameStartswith).Offset(offset).Ordering(ordering).PulpLabelSelect(pulpLabelSelect).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DistributionsAptApi.DistributionsDebAptList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginateddebAptDistributionResponseList**](Paginateddeb.AptDistributionResponseList.md)
+[**PaginateddebAptDistributionResponseList**](PaginateddebAptDistributionResponseList.md)
 
 ### Authorization
 
@@ -264,12 +264,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this apt distribution.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this apt distribution.
     patcheddebAptDistribution := *openapiclient.NewPatcheddebAptDistribution() // PatcheddebAptDistribution | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DistributionsAptApi.DistributionsDebAptPartialUpdate(context.Background(), pulpId).PatcheddebAptDistribution(patcheddebAptDistribution).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DistributionsAptApi.DistributionsDebAptPartialUpdate(context.Background(), pulpId).PatcheddebAptDistribution(patcheddebAptDistribution).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DistributionsAptApi.DistributionsDebAptPartialUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -285,7 +285,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this apt distribution. | 
+**pulpId** | **string** | A UUID string identifying this apt distribution. | 
 
 ### Other Parameters
 
@@ -336,13 +336,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this apt distribution.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this apt distribution.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DistributionsAptApi.DistributionsDebAptRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DistributionsAptApi.DistributionsDebAptRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DistributionsAptApi.DistributionsDebAptRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -358,7 +358,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this apt distribution. | 
+**pulpId** | **string** | A UUID string identifying this apt distribution. | 
 
 ### Other Parameters
 
@@ -373,7 +373,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DebAptDistributionResponse**](deb.AptDistributionResponse.md)
+[**DebAptDistributionResponse**](DebAptDistributionResponse.md)
 
 ### Authorization
 
@@ -410,12 +410,12 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this apt distribution.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this apt distribution.
     debAptDistribution := *openapiclient.NewDebAptDistribution("BasePath_example", "Name_example") // DebAptDistribution | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.DistributionsAptApi.DistributionsDebAptUpdate(context.Background(), pulpId).DebAptDistribution(debAptDistribution).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.DistributionsAptApi.DistributionsDebAptUpdate(context.Background(), pulpId).DebAptDistribution(debAptDistribution).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DistributionsAptApi.DistributionsDebAptUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -431,7 +431,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this apt distribution. | 
+**pulpId** | **string** | A UUID string identifying this apt distribution. | 
 
 ### Other Parameters
 

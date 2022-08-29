@@ -35,8 +35,8 @@ func main() {
     debVerbatimPublication := *openapiclient.NewDebVerbatimPublication() // DebVerbatimPublication | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.PublicationsVerbatimApi.PublicationsDebVerbatimCreate(context.Background()).DebVerbatimPublication(debVerbatimPublication).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PublicationsVerbatimApi.PublicationsDebVerbatimCreate(context.Background()).DebVerbatimPublication(debVerbatimPublication).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicationsVerbatimApi.PublicationsDebVerbatimCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,11 +98,11 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this verbatim publication.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this verbatim publication.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.PublicationsVerbatimApi.PublicationsDebVerbatimDelete(context.Background(), pulpId).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PublicationsVerbatimApi.PublicationsDebVerbatimDelete(context.Background(), pulpId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicationsVerbatimApi.PublicationsDebVerbatimDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -116,7 +116,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this verbatim publication. | 
+**pulpId** | **string** | A UUID string identifying this verbatim publication. | 
 
 ### Other Parameters
 
@@ -179,13 +179,13 @@ func main() {
     pulpCreatedLte := time.Now() // time.Time | Filter results where pulp_created is less than or equal to value (optional)
     pulpCreatedRange := []time.Time{time.Now()} // []time.Time | Filter results where pulp_created is between two comma separated values (optional)
     repository := "repository_example" // string | Repository referenced by HREF (optional)
-    repositoryVersion := TODO // string | Repository Version referenced by HREF (optional)
+    repositoryVersion := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Repository Version referenced by HREF (optional)
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.PublicationsVerbatimApi.PublicationsDebVerbatimList(context.Background()).Content(content).ContentIn(contentIn).Limit(limit).Offset(offset).Ordering(ordering).PulpCreated(pulpCreated).PulpCreatedGt(pulpCreatedGt).PulpCreatedGte(pulpCreatedGte).PulpCreatedLt(pulpCreatedLt).PulpCreatedLte(pulpCreatedLte).PulpCreatedRange(pulpCreatedRange).Repository(repository).RepositoryVersion(repositoryVersion).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PublicationsVerbatimApi.PublicationsDebVerbatimList(context.Background()).Content(content).ContentIn(contentIn).Limit(limit).Offset(offset).Ordering(ordering).PulpCreated(pulpCreated).PulpCreatedGt(pulpCreatedGt).PulpCreatedGte(pulpCreatedGte).PulpCreatedLt(pulpCreatedLt).PulpCreatedLte(pulpCreatedLte).PulpCreatedRange(pulpCreatedRange).Repository(repository).RepositoryVersion(repositoryVersion).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicationsVerbatimApi.PublicationsDebVerbatimList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -218,13 +218,13 @@ Name | Type | Description  | Notes
  **pulpCreatedLte** | **time.Time** | Filter results where pulp_created is less than or equal to value | 
  **pulpCreatedRange** | [**[]time.Time**](time.Time.md) | Filter results where pulp_created is between two comma separated values | 
  **repository** | **string** | Repository referenced by HREF | 
- **repositoryVersion** | [**string**](string.md) | Repository Version referenced by HREF | 
+ **repositoryVersion** | **string** | Repository Version referenced by HREF | 
  **fields** | **string** | A list of fields to include in the response. | 
  **excludeFields** | **string** | A list of fields to exclude from the response. | 
 
 ### Return type
 
-[**PaginateddebVerbatimPublicationResponseList**](Paginateddeb.VerbatimPublicationResponseList.md)
+[**PaginateddebVerbatimPublicationResponseList**](PaginateddebVerbatimPublicationResponseList.md)
 
 ### Authorization
 
@@ -261,13 +261,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this verbatim publication.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this verbatim publication.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.PublicationsVerbatimApi.PublicationsDebVerbatimRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PublicationsVerbatimApi.PublicationsDebVerbatimRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublicationsVerbatimApi.PublicationsDebVerbatimRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -283,7 +283,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this verbatim publication. | 
+**pulpId** | **string** | A UUID string identifying this verbatim publication. | 
 
 ### Other Parameters
 
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DebVerbatimPublicationResponse**](deb.VerbatimPublicationResponse.md)
+[**DebVerbatimPublicationResponse**](DebVerbatimPublicationResponse.md)
 
 ### Authorization
 

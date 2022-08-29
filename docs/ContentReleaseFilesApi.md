@@ -34,8 +34,8 @@ func main() {
     debReleaseFile := *openapiclient.NewDebReleaseFile(map[string]interface{}(123), "Distribution_example") // DebReleaseFile | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentReleaseFilesApi.ContentDebReleaseFilesCreate(context.Background()).DebReleaseFile(debReleaseFile).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentReleaseFilesApi.ContentDebReleaseFilesCreate(context.Background()).DebReleaseFile(debReleaseFile).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentReleaseFilesApi.ContentDebReleaseFilesCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DebReleaseFileResponse**](deb.ReleaseFileResponse.md)
+[**DebReleaseFileResponse**](DebReleaseFileResponse.md)
 
 ### Authorization
 
@@ -111,8 +111,8 @@ func main() {
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentReleaseFilesApi.ContentDebReleaseFilesList(context.Background()).Codename(codename).Limit(limit).Offset(offset).Ordering(ordering).RelativePath(relativePath).RepositoryVersion(repositoryVersion).RepositoryVersionAdded(repositoryVersionAdded).RepositoryVersionRemoved(repositoryVersionRemoved).Sha256(sha256).Suite(suite).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentReleaseFilesApi.ContentDebReleaseFilesList(context.Background()).Codename(codename).Limit(limit).Offset(offset).Ordering(ordering).RelativePath(relativePath).RepositoryVersion(repositoryVersion).RepositoryVersionAdded(repositoryVersionAdded).RepositoryVersionRemoved(repositoryVersionRemoved).Sha256(sha256).Suite(suite).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentReleaseFilesApi.ContentDebReleaseFilesList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginateddebReleaseFileResponseList**](Paginateddeb.ReleaseFileResponseList.md)
+[**PaginateddebReleaseFileResponseList**](PaginateddebReleaseFileResponseList.md)
 
 ### Authorization
 
@@ -185,13 +185,13 @@ import (
 )
 
 func main() {
-    pulpId := TODO // string | A UUID string identifying this release file.
+    pulpId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | A UUID string identifying this release file.
     fields := "fields_example" // string | A list of fields to include in the response. (optional)
     excludeFields := "excludeFields_example" // string | A list of fields to exclude from the response. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ContentReleaseFilesApi.ContentDebReleaseFilesRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ContentReleaseFilesApi.ContentDebReleaseFilesRead(context.Background(), pulpId).Fields(fields).ExcludeFields(excludeFields).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentReleaseFilesApi.ContentDebReleaseFilesRead``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -207,7 +207,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**pulpId** | [**string**](.md) | A UUID string identifying this release file. | 
+**pulpId** | **string** | A UUID string identifying this release file. | 
 
 ### Other Parameters
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DebReleaseFileResponse**](deb.ReleaseFileResponse.md)
+[**DebReleaseFileResponse**](DebReleaseFileResponse.md)
 
 ### Authorization
 

@@ -21,7 +21,7 @@ type PolicyDb6Enum string
 
 // List of PolicyDb6Enum
 const (
-	IMMEDIATE PolicyDb6Enum = "immediate"
+	// IMMEDIATE PolicyDb6Enum = "immediate"
 	WHEN_SYNCING_DOWNLOAD_ALL_METADATA_AND_CONTENT_NOW PolicyDb6Enum = "When syncing, download all metadata and content now."
 )
 
